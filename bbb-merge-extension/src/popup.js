@@ -1,13 +1,18 @@
 const deskshareDot = document.getElementById('deskshare-dot');
 const webcamsDot = document.getElementById('webcams-dot');
+const deskshareUrlEl = document.getElementById('deskshare-url');
+const webcamsUrlEl = document.getElementById('webcams-url');
 const statusMsg = document.getElementById('status-message');
 const mergeBtn = document.getElementById('merge-btn');
+const rescanBtn = document.getElementById('rescan-btn');
 const progressContainer = document.getElementById('progress-container');
 const progressBar = document.getElementById('progress-bar');
 
 function updateUI(state) {
   deskshareDot.className = 'status-dot ' + (state.deskshareUrl ? 'found' : 'pending');
   webcamsDot.className = 'status-dot ' + (state.webcamsUrl ? 'found' : 'pending');
+  deskshareUrlEl.textContent = state.deskshareUrl ? new URL(state.deskshareUrl).pathname : '';
+  webcamsUrlEl.textContent = state.webcamsUrl ? new URL(state.webcamsUrl).pathname : '';
 
   const hasVideos = state.deskshareUrl || state.webcamsUrl;
 
@@ -18,7 +23,7 @@ function updateUI(state) {
         : 'Esperando datos... Abre una grabación BBB.';
       mergeBtn.disabled = !hasVideos;
       mergeBtn.className = 'merge-btn';
-      mergeBtn.textContent = '🔀 Unir y descargar';
+      mergeBtn.textContent = hasVideos ? '🔀 Unir y descargar' : '🔀 Unir y descargar';
       progressContainer.style.display = 'none';
       break;
 
@@ -81,6 +86,16 @@ mergeBtn.addEventListener('click', () => {
   mergeBtn.disabled = true;
   mergeBtn.className = 'merge-btn merging';
   mergeBtn.textContent = '⏳ Uniendo...';
+});
+
+rescanBtn.addEventListener('click', () => {
+  statusMsg.textContent = 'Re-escanenado...';
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    if (tabs[0]) {
+      chrome.tabs.sendMessage(tabs[0].id, { type: 'RESCAN' }).catch(() => {});
+    }
+  });
+  setTimeout(getState, 2000);
 });
 
 chrome.runtime.onMessage.addListener((msg) => {

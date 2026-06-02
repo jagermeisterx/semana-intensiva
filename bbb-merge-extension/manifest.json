@@ -5,10 +5,10 @@
   "description": "Descarga y une automáticamente los videos de pantalla y webcams de grabaciones BBB",
   "permissions": [
     "nativeMessaging",
-    "storage",
-    "cookies"
+    "storage"
   ],
   "host_permissions": [
+    "*://*/playback/presentation/*",
     "*://*/presentation/*"
   ],
   "background": {
@@ -16,7 +16,10 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*/presentation/*"],
+      "matches": [
+        "*://*/playback/presentation/*",
+        "*://*/presentation/*"
+      ],
       "js": ["src/content.js"],
       "run_at": "document_end"
     }
