@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <div class="header">
+      <span class="logo">🎬</span>
+      <h1>BBB Merge</h1>
+    </div>
+
+    <div id="videos-info" class="videos-info">
+      <div class="video-row" id="deskshare-row">
+        <span class="status-dot" id="deskshare-dot"></span>
+        <span class="video-name">deskshare.webm</span>
+        <span class="video-badge video">Video</span>
+      </div>
+      <div class="video-row" id="webcams-row">
+        <span class="status-dot" id="webcams-dot"></span>
+        <span class="video-name">webcams.webm</span>
+        <span class="video-badge audio">Audio + Video</span>
+      </div>
+    </div>
+
+    <div id="status-area" class="status-area">
+      <div class="status-message" id="status-message">Esperando datos...</div>
+      <div class="progress-bar-container" id="progress-container" style="display:none">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+    </div>
+
+    <button id="merge-btn" class="merge-btn" disabled>
+      🔀 Unir y descargar
+    </button>
+
+    <div class="footer">
+      <span id="footer-text">BBB Merge v1.0</span>
+    </div>
+  </div>
+
+  <script src="src/popup.js"></script>
+</body>
+</html>

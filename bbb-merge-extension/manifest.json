@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "BBB Merge",
+  "version": "1.0.0",
+  "description": "Descarga y une automáticamente los videos de pantalla y webcams de grabaciones BBB",
+  "permissions": [
+    "nativeMessaging",
+    "storage",
+    "cookies"
+  ],
+  "host_permissions": [
+    "*://*/presentation/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/presentation/*"],
+      "js": ["src/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "BBB Merge",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

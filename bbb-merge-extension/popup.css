@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 340px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  font-size: 13px;
+}
+
+#app {
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.videos-info {
+  background: #16213e;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.video-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+}
+
+.video-row + .video-row {
+  border-top: 1px solid #0f3460;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot.pending {
+  background: #555;
+}
+
+.status-dot.found {
+  background: #4CAF50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+}
+
+.video-name {
+  flex: 1;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.video-badge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.video-badge.video {
+  background: #2196F3;
+  color: white;
+}
+
+.video-badge.audio {
+  background: #FF9800;
+  color: white;
+}
+
+.status-area {
+  background: #16213e;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  min-height: 40px;
+}
+
+.status-message {
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.4;
+}
+
+.progress-bar-container {
+  margin-top: 8px;
+  height: 6px;
+  background: #0f3460;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4CAF50, #2196F3);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.merge-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #0f3460;
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.merge-btn:not(:disabled) {
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+  color: white;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.merge-btn:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(33, 150, 243, 0.4);
+}
+
+.merge-btn:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.merge-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.merge-btn.merging {
+  background: linear-gradient(135deg, #FF9800, #F57C00);
+  color: white;
+  cursor: wait;
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+}
+
+.merge-btn.complete {
+  background: linear-gradient(135deg, #4CAF50, #388E3C);
+  color: white;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.merge-btn.error {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: white;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+.footer {
+  margin-top: 12px;
+  text-align: center;
+}
+
+#footer-text {
+  font-size: 10px;
+  color: #555;
+}
