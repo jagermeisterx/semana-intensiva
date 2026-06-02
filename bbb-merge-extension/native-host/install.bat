@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 set "SCRIPT_DIR=%~dp0"
-set "HOST_SCRIPT=%SCRIPT_DIR%bbb-merge-host.py"
+set "HOST_SCRIPT=%SCRIPT_DIR%bbb-merge-host.bat"
 set "HOST_NAME=com.bbb.merge"
 set "EXTENSION_ID=%~1"
 
