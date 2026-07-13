@@ -292,7 +292,7 @@ function nivelPct(pct) {
 function nivelClass(n) { return "nivel-" + n.toLowerCase(); }
 
 async function init() {
-  const res = await fetch("data.json");
+  const res = await fetch("analisis/data.json");
   DATA = await res.json();
 
   // Subtítulo

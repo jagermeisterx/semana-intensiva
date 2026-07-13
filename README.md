@@ -11,14 +11,14 @@ Web estática para visualizar los resultados de la **Prueba Unidad II** de 2º M
 
 ```
 .
+├── index.html                        # Web con gráficos (Chart.js)
 ├── 2A TABULACION 4.xlsx              # Tabulación curso 2A (entrada)
 ├── TABULACION 2B 4.xlsx              # Tabulación curso 2B (entrada)
 ├── TABLA ESPECIFICACIONES UNIDAD II.xlsx  # Pregunta -> habilidad (entrada)
 └── analisis/
     ├── build.py                      # Lee los .xlsx y genera data.json
     ├── nombres.json                  # Nombres editables (clave = n° de lista)
-    ├── data.json                     # Datos procesados (consume la web)
-    └── index.html                    # Web con gráficos (Chart.js)
+    └── data.json                     # Datos procesados (consume la web)
 ```
 
 ## Cómo usar
@@ -48,10 +48,9 @@ Los nombres viven en `analisis/nombres.json`, separados por curso y número de l
 
 ### 3. Levantar la web en local
 
-La página carga `data.json` por `fetch`, así que debe servirse por HTTP (no abre con `file://`):
+La página carga `analisis/data.json` por `fetch`, así que debe servirse por HTTP (no abre con `file://`):
 
 ```bash
-cd analisis
 python3 -m http.server 8000
 ```
 
