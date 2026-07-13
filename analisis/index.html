@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis Prueba Unidad II - 2º Medio</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --verde: #2e9e5a;
+    --verde-bg: #d7f0e0;
+    --amarillo: #f0b429;
+    --amarillo-bg: #fdf3d7;
+    --rojo: #e04848;
+    --rojo-bg: #fbdfdf;
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --accent: #2563eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  header.top {
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+    color: #fff;
+    padding: 24px 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  header.top h1 { margin: 0 0 4px; font-size: 22px; font-weight: 700; }
+  header.top p { margin: 0; opacity: 0.85; font-size: 14px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+  .nav-curso {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .nav-curso button {
+    background: #fff;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.15s;
+  }
+  .nav-curso button:hover { border-color: var(--accent); color: var(--accent); }
+  .nav-curso button.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .card .value {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .card .meta {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .card.indicator .value.pill { display: inline-block; padding: 2px 12px; border-radius: 999px; color: #fff; font-size: 24px; }
+  .nivel-verde { background: var(--verde); }
+  .nivel-amarillo { background: var(--amarillo); }
+  .nivel-rojo { background: var(--rojo); }
+
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .section h2 {
+    margin: 0 0 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+  }
+  .charts-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .chart-box { position: relative; height: 300px; }
+  .chart-box.tall { height: 360px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table th, table td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  table th {
+    background: #f9fafb;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--muted);
+    position: sticky;
+    top: 0;
+  }
+  .table-wrap { overflow-x: auto; max-height: 480px; }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; color: #fff; }
+  .badge.soft { color: var(--text); }
+  .pct-cell { font-weight: 600; }
+
+  .levels-summary { display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .levels-summary .chip {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    background: #fff;
+  }
+  .chip.verde { border-color: var(--verde); color: var(--verde); background: var(--verde-bg); }
+  .chip.amarillo { border-color: var(--amarillo); color: #b07a00; background: var(--amarillo-bg); }
+  .chip.rojo { border-color: var(--rojo); color: var(--rojo); background: var(--rojo-bg); }
+
+  details summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent);
+    padding: 8px 0;
+    list-style: none;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before { content: "▸ "; }
+  details[open] summary::before { content: "▾ "; }
+
+  .empty { padding: 24px; text-align: center; color: var(--muted); }
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0 14px;
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+  .filter-bar label { color: var(--muted); font-weight: 600; }
+  .filter-bar select {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .filter-bar select:focus { outline: none; border-color: var(--accent); }
+  .filter-hint { color: var(--muted); font-size: 12px; }
+  .badge-curso { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; }
+  .badge-curso.c2A { background: #dbeafe; color: #1e40af; }
+  .badge-curso.c2B { background: #ede9fe; color: #6d28d9; }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 24px; }
+
+  @media (max-width: 600px) {
+    .card .value { font-size: 22px; }
+    .chart-box { height: 260px; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Análisis de Resultados — Prueba Unidad II</h1>
+  <p id="subtitle">2º Medio · Cursos 2A y 2B · Tabulación de 40 preguntas</p>
+</header>
+
+<div class="container">
+  <nav class="nav-curso" id="nav-curso"></nav>
+
+  <!-- Indicadores principales -->
+  <div class="grid-cards" id="indicators"></div>
+
+  <!-- Habilidades (gráfico) -->
+  <div class="section">
+    <h2>Porcentaje de logro por habilidad</h2>
+    <p style="margin-top:0;font-size:13px;color:var(--muted);">
+      Comparativa del % de respuestas correctas en cada habilidad evaluada.
+    </p>
+    <div class="charts-row">
+      <div class="chart-box"><canvas id="chartHabilidad"></canvas></div>
+      <div class="chart-box"><canvas id="chartNivelesLogro"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Niveles por habilidad -->
+  <div class="section">
+    <h2>Distribución por nivel (semáforo)</h2>
+    <div class="levels-summary" id="levels-summary"></div>
+    <div class="chart-box tall"><canvas id="chartNivelesHabilidad"></canvas></div>
+  </div>
+
+  <!-- Tabla de especificación -->
+  <div class="section">
+    <h2>Tabla de especificación — Habilidad por pregunta</h2>
+    <div class="levels-summary" id="hab-count-chips"></div>
+    <details open>
+      <summary>Ver detalle pregunta por pregunta</summary>
+      <div class="table-wrap" id="tabla-especificacion"></div>
+    </details>
+  </div>
+
+  <!-- Detalle estudiantes -->
+  <div class="section">
+    <h2>Detalle de estudiantes por nivel</h2>
+    <details>
+      <summary id="detalle-toggle">Mostrar tabla de estudiantes</summary>
+      <div class="filter-bar">
+        <label for="filtro-curso">Filtrar por curso:</label>
+        <select id="filtro-curso" onchange="renderTablaEstudiantes(getInd())">
+          <option value="Todos">Todos</option>
+          <option value="2A">2A</option>
+          <option value="2B">2B</option>
+        </select>
+        <span class="filter-hint" id="filtro-hint"></span>
+      </div>
+      <div class="table-wrap" id="tabla-estudiantes"></div>
+    </details>
+  </div>
+</div>
+
+<footer>
+  Generado desde los archivos .xlsx con <code>build.py</code> ·
+  Umbrales: Verde ≥ 70% · Amarillo 40–69% · Rojo &lt; 40%
+</footer>
+
+<script>
+let DATA = null;
+let currentCurso = "general";
+let charts = {};
+
+const HAB_NAMES = {
+  LOCALIZAR: "Localizar",
+  RELACIONAR: "Relacionar",
+  REFLEXIONAR: "Reflexionar"
+};
+const HAB_COLORS = {
+  LOCALIZAR: "#2563eb",
+  RELACIONAR: "#7c3aed",
+  REFLEXIONAR: "#0d9488"
+};
+const NIVEL_COLORS = {
+  Verde: "#2e9e5a",
+  Amarillo: "#f0b429",
+  Rojo: "#e04848"
+};
+
+function nivelPct(pct) {
+  if (pct >= 70) return "Verde";
+  if (pct >= 40) return "Amarillo";
+  return "Rojo";
+}
+function nivelClass(n) { return "nivel-" + n.toLowerCase(); }
+
+async function init() {
+  const res = await fetch("data.json");
+  DATA = await res.json();
+
+  // Subtítulo
+  document.getElementById("subtitle").textContent =
+    DATA.meta.prueba + " · " + DATA.meta.total_preguntas + " preguntas";
+
+  // Chips de conteo de habilidad
+  const habChips = document.getElementById("hab-count-chips");
+  habChips.innerHTML = "";
+  for (const [h, n] of Object.entries(DATA.conteo_habilidad)) {
+    const c = document.createElement("span");
+    c.className = "chip";
+    c.style.borderColor = HAB_COLORS[h];
+    c.style.color = HAB_COLORS[h];
+    c.textContent = HAB_NAMES[h] + ": " + n + " preguntas";
+    habChips.appendChild(c);
+  }
+
+  // Tabla de especificación
+  renderTablaEspecificacion();
+
+  // Nav de cursos
+  const nav = document.getElementById("nav-curso");
+  nav.innerHTML = "";
+  DATA.cursos.forEach(curso => {
+    const b = document.createElement("button");
+    b.textContent = DATA.nombres_cursos[curso];
+    if (curso === currentCurso) b.classList.add("active");
+    b.onclick = () => {
+      currentCurso = curso;
+      document.querySelectorAll("#nav-curso button").forEach(x => x.classList.remove("active"));
+      b.classList.add("active");
+      renderCurso();
+    };
+    nav.appendChild(b);
+  });
+
+  renderCurso();
+}
+
+function renderTablaEspecificacion() {
+  const wrap = document.getElementById("tabla-especificacion");
+  // Agrupar por habilidad
+  const byHab = {};
+  DATA.especificaciones.forEach(e => {
+    (byHab[e.habilidad] = byHab[e.habilidad] || []).push(e.pregunta);
+  });
+
+  let html = "<table><thead><tr><th>Habilidad</th><th>Preguntas</th><th>Cantidad</th></tr></thead><tbody>";
+  for (const [h, ps] of Object.entries(byHab)) {
+    html += `<tr>
+      <td><span class="badge soft" style="border:1px solid ${HAB_COLORS[h]};color:${HAB_COLORS[h]}">${HAB_NAMES[h]}</span></td>
+      <td>${ps.join(", ")}</td>
+      <td><strong>${ps.length}</strong></td>
+    </tr>`;
+  }
+  html += "</tbody></table>";
+  wrap.innerHTML = html;
+}
+
+function renderCurso() {
+  const ind = DATA.indicadores[currentCurso];
+
+  // Indicadores
+  const wrap = document.getElementById("indicators");
+  const habList = ["LOCALIZAR", "RELACIONAR", "REFLEXIONAR"];
+  let html = "";
+
+  html += cardBasic("N° Estudiantes", ind.n_estudiantes, "Curso " + DATA.nombres_cursos[currentCurso]);
+  html += cardPct("% Logro General", ind.logro_general, "sobre " + DATA.meta.total_preguntas + " preguntas");
+  habList.forEach(h => {
+    const v = ind.por_habilidad[h] || 0;
+    html += cardPct("% " + HAB_NAMES[h], v, DATA.conteo_habilidad[h] + " preguntas");
+  });
+
+  wrap.innerHTML = html;
+
+  // Resumen niveles
+  const levels = document.getElementById("levels-summary");
+  levels.innerHTML = "";
+  levels.appendChild(makeChip("Verde", "≥ 70%", ind.niveles_logro.Verde));
+  levels.appendChild(makeChip("Amarillo", "40–69%", ind.niveles_logro.Amarillo));
+  levels.appendChild(makeChip("Rojo", "< 40%", ind.niveles_logro.Rojo));
+
+  renderChartHabilidad(ind);
+  renderChartNivelesLogro(ind);
+  renderChartNivelesHabilidad(ind);
+  syncFiltro();
+  renderTablaEstudiantes(ind);
+}
+
+function syncFiltro() {
+  const sel = document.getElementById("filtro-curso");
+  if (!sel) return;
+  // Habilitar todas las opciones primero
+  Array.from(sel.options).forEach(o => o.disabled = false);
+  // En vista de un curso específico, solo esa opción es excluyente:
+  // el detalle ya contiene solo ese curso, así que deshabilitamos la opción del otro.
+  if (currentCurso === "2A") {
+    sel.value = "2A";
+    Array.from(sel.options).forEach(o => { if (o.value === "2B") o.disabled = true; });
+  } else if (currentCurso === "2B") {
+    sel.value = "2B";
+    Array.from(sel.options).forEach(o => { if (o.value === "2A") o.disabled = true; });
+  } else {
+    sel.value = "Todos";
+  }
+}
+
+function cardBasic(label, value, meta) {
+  return `<div class="card indicator">
+    <div class="label">${label}</div>
+    <div class="value">${value}</div>
+    <div class="meta">${meta || ""}</div>
+  </div>`;
+}
+function cardPct(label, value, meta) {
+  const n = nivelPct(value);
+  return `<div class="card indicator">
+    <div class="label">${label}</div>
+    <div class="value pill ${nivelClass(n)}">${value.toFixed(1)}%</div>
+    <div class="meta">${meta || ""} · Nivel ${n}</div>
+  </div>`;
+}
+function makeChip(nivel, rango, count) {
+  const c = document.createElement("span");
+  c.className = "chip " + nivel.toLowerCase();
+  c.textContent = nivel + " (" + rango + "): " + count + " estudiantes";
+  return c;
+}
+
+function renderChartHabilidad(ind) {
+  const ctx = document.getElementById("chartHabilidad");
+  if (charts.habilidad) charts.habilidad.destroy();
+  const habList = ["LOCALIZAR", "RELACIONAR", "REFLEXIONAR"];
+  charts.habilidad = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: habList.map(h => HAB_NAMES[h]),
+      datasets: [{
+        label: "% de logro",
+        data: habList.map(h => ind.por_habilidad[h] || 0),
+        backgroundColor: habList.map(h => HAB_COLORS[h]),
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + "%" } } }
+    }
+  });
+}
+
+function renderChartNivelesLogro(ind) {
+  const ctx = document.getElementById("chartNivelesLogro");
+  if (charts.nivelesLogro) charts.nivelesLogro.destroy();
+  const niveles = ["Verde", "Amarillo", "Rojo"];
+  charts.nivelesLogro = new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      labels: niveles,
+      datasets: [{
+        data: niveles.map(n => ind.niveles_logro[n]),
+        backgroundColor: niveles.map(n => NIVEL_COLORS[n])
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: "bottom" },
+        tooltip: {
+          callbacks: {
+            label: c => {
+              const total = c.dataset.data.reduce((a, b) => a + b, 0);
+              const pct = total ? ((c.parsed / total) * 100).toFixed(1) : 0;
+              return c.label + ": " + c.parsed + " (" + pct + "%)";
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+function renderChartNivelesHabilidad(ind) {
+  const ctx = document.getElementById("chartNivelesHabilidad");
+  if (charts.nivelesHabilidad) charts.nivelesHabilidad.destroy();
+  const habList = ["LOCALIZAR", "RELACIONAR", "REFLEXIONAR"];
+  const niveles = ["Verde", "Amarillo", "Rojo"];
+  const datasets = niveles.map(n => ({
+    label: n,
+    data: habList.map(h => ind.niveles_por_habilidad[h][n]),
+    backgroundColor: NIVEL_COLORS[n],
+    borderRadius: 4
+  }));
+  charts.nivelesHabilidad = new Chart(ctx, {
+    type: "bar",
+    data: { labels: habList.map(h => HAB_NAMES[h]), datasets: datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: { stacked: true },
+        y: { stacked: true, beginAtZero: true, title: { display: true, text: "N° estudiantes" } }
+      },
+      plugins: { legend: { position: "bottom" } }
+    }
+  });
+}
+
+function getInd() { return DATA.indicadores[currentCurso]; }
+
+function getCurrentFiltro() {
+  const sel = document.getElementById("filtro-curso");
+  if (!sel) return "Todos";
+  return sel.value || "Todos";
+}
+
+function renderTablaEstudiantes(ind) {
+  const wrap = document.getElementById("tabla-estudiantes");
+  const habList = ["LOCALIZAR", "RELACIONAR", "REFLEXIONAR"];
+  const filtro = getCurrentFiltro();
+  // Filtrar por curso (si la vista es de un curso específico, forzamos ese filtro;
+  // el usuario puede ampliar a "Todos" desde el select).
+  let base = [...ind.detalle_estudiantes];
+  // Si la vista actual es de un curso específico y filtro == "Todos",
+  // igual mostramos ambos porque el detalle general ya contiene todos. Pero si
+  // la vista es un curso (2A/2B) sus detalles solo incluyen ese curso => no filtrar.
+  if (filtro !== "Todos") {
+    base = base.filter(d => d.curso === filtro);
+  }
+  // Ordenar por pct_general desc
+  const detalle = base.sort((a, b) => b.pct_general - a.pct_general);
+  // Hint: total visible
+  const hint = document.getElementById("filtro-hint");
+  if (hint) hint.textContent = `Mostrando ${detalle.length} de ${ind.detalle_estudiantes.length} estudiantes`;
+
+  if (!detalle.length) { wrap.innerHTML = '<div class="empty">Sin estudiantes para este filtro</div>'; return; }
+  let html = `<table><thead><tr>
+    <th>#</th><th>Curso</th><th>Estudiante</th><th>Correctas</th>
+    <th>% General</th><th>Nivel</th>
+    ${habList.map(h => `<th>% ${HAB_NAMES[h]}</th>`).join("")}
+    ${habList.map(h => `<th>Nivel ${HAB_NAMES[h]}</th>`).join("")}
+  </tr></thead><tbody>`;
+  detalle.forEach((d, i) => {
+    const cs = d.curso || "";
+    const cls = cs ? "badge-curso c" + cs : "badge-curso";
+    html += `<tr>
+      <td>${i + 1}</td>
+      <td>${cs ? `<span class="${cls}">${cs}</span>` : ""}</td>
+      <td>${escapeHtml(d.nombre)}</td>
+      <td>${d.correctas}/${DATA.meta.total_preguntas}</td>
+      <td class="pct-cell">${d.pct_general.toFixed(1)}%</td>
+      <td><span class="badge ${nivelClass(d.nivel)}">${d.nivel}</span></td>
+      ${habList.map(h => `<td class="pct-cell">${d.por_habilidad[h].toFixed(1)}%</td>`).join("")}
+      ${habList.map(h => `<td><span class="badge ${nivelClass(d.nivel_por_habilidad[h])}">${d.nivel_por_habilidad[h]}</span></td>`).join("")}
+    </tr>`;
+  });
+  html += "</tbody></table>";
+  wrap.innerHTML = html;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[c]));
+}
+
+init().catch(err => {
+  document.querySelector(".container").innerHTML =
+    '<div class="empty">Error al cargar data.json: ' + err.message + "</div>";
+});
+</script>
+</body>
+</html>
