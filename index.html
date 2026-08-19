@@ -196,6 +196,19 @@
     .card .value { font-size: 22px; }
     .chart-box { height: 260px; }
   }
+
+  /* Comparativa de pruebas */
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .comp-table th, .comp-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); text-align: center; }
+  .comp-table th { background: #f1f5f9; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); }
+  .comp-table td:first-child { text-align: left; font-weight: 600; }
+  .diff-pos { color: var(--verde); font-weight: 700; }
+  .diff-neg { color: var(--rojo); font-weight: 700; }
+  .diff-neutral { color: var(--muted); }
+  .comp-header { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+  .comp-badge { padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; border: 2px solid; }
+  .comp-badge.anterior { border-color: #94a3b8; color: #475569; background: #f1f5f9; }
+  .comp-badge.actual { border-color: var(--accent); color: var(--accent); background: #dbeafe; }
 </style>
 </head>
 <body>
@@ -256,6 +269,17 @@
       <div class="table-wrap" id="tabla-estudiantes"></div>
     </details>
   </div>
+
+  <!-- Comparativa de pruebas -->
+  <div class="section" id="seccion-comparativa" style="display:none;">
+    <h2>Comparativa de Pruebas</h2>
+    <div class="comp-header" id="comp-header"></div>
+    <div class="table-wrap" id="tabla-comparativa"></div>
+    <div class="charts-row" style="margin-top:20px;">
+      <div class="chart-box"><canvas id="chartComparativa"></canvas></div>
+      <div class="chart-box"><canvas id="chartComparativaHab"></canvas></div>
+    </div>
+  </div>
 </div>
 
 <footer>
@@ -265,6 +289,7 @@
 
 <script>
 let DATA = null;
+let DATA_ANTERIOR = null;
 let currentCurso = "general";
 let charts = {};
 
@@ -294,6 +319,12 @@ function nivelClass(n) { return "nivel-" + n.toLowerCase(); }
 async function init() {
   const res = await fetch("analisis/data.json");
   DATA = await res.json();
+
+  // Intentar cargar datos anteriores para comparativa
+  try {
+    const resAnt = await fetch("analisis/data_anterior.json");
+    if (resAnt.ok) DATA_ANTERIOR = await resAnt.json();
+  } catch(e) { DATA_ANTERIOR = null; }
 
   // Subtítulo
   document.getElementById("subtitle").textContent =
@@ -331,6 +362,11 @@ async function init() {
   });
 
   renderCurso();
+
+  // Comparativa
+  if (DATA_ANTERIOR) {
+    renderComparativa();
+  }
 }
 
 function renderTablaEspecificacion() {
@@ -562,6 +598,104 @@ function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
   }[c]));
+}
+
+function diffStr(nuevo, anterior) {
+  const d = nuevo - anterior;
+  if (Math.abs(d) < 0.05) return '<span class="diff-neutral">=</span>';
+  const sign = d > 0 ? "+" : "";
+  const cls = d > 0 ? "diff-pos" : "diff-neg";
+  return `<span class="${cls}">${sign}${d.toFixed(1)}%</span>`;
+}
+
+function renderComparativa() {
+  const sec = document.getElementById("seccion-comparativa");
+  sec.style.display = "";
+
+  const cur = DATA.indicadores.general;
+  const ant = DATA_ANTERIOR.indicadores.general;
+
+  // Header badges
+  const hdr = document.getElementById("comp-header");
+  hdr.innerHTML = `
+    <span class="comp-badge anterior">Anterior: ${DATA_ANTERIOR.meta.prueba}</span>
+    <span class="comp-badge actual">Actual: ${DATA.meta.prueba}</span>
+  `;
+
+  // Tabla comparativa
+  const habList = ["LOCALIZAR", "RELACIONAR", "REFLEXIONAR"];
+  const rows = [
+    ["N° Estudiantes", cur.n_estudiantes, ant.n_estudiantes, ""],
+    ["% Logro General", cur.logro_general, ant.logro_general, "%"],
+    ...habList.map(h => [
+      "% " + HAB_NAMES[h],
+      cur.por_habilidad[h] || 0,
+      ant.por_habilidad[h] || 0,
+      "%"
+    ]),
+    ["Verde (≥70%)", cur.niveles_logro.Verde, ant.niveles_logro.Verde, ""],
+    ["Amarillo (40-69%)", cur.niveles_logro.Amarillo, ant.niveles_logro.Amarillo, ""],
+    ["Rojo (<40%)", cur.niveles_logro.Rojo, ant.niveles_logro.Rojo, ""],
+  ];
+
+  let html = `<table class="comp-table"><thead><tr>
+    <th>Métrica</th>
+    <th>${DATA_ANTERIOR.meta.prueba}</th>
+    <th>${DATA.meta.prueba}</th>
+    <th>Cambio</th>
+  </tr></thead><tbody>`;
+  rows.forEach(([label, nuevo, anterior, suffix]) => {
+    const nv = suffix === "%" ? nuevo.toFixed(1) + "%" : nuevo;
+    const av = suffix === "%" ? anterior.toFixed(1) + "%" : anterior;
+    const diff = suffix === "%" ? diffStr(nuevo, anterior) : "";
+    html += `<tr><td>${label}</td><td>${av}</td><td>${nv}</td><td>${diff}</td></tr>`;
+  });
+  html += "</tbody></table>";
+  document.getElementById("tabla-comparativa").innerHTML = html;
+
+  // Gráfico de barras: logro general
+  renderChartComparativaGeneral(cur, ant);
+  renderChartComparativaHabilidades(cur, ant, habList);
+}
+
+function renderChartComparativaGeneral(cur, ant) {
+  const ctx = document.getElementById("chartComparativa");
+  if (charts.comparativa) charts.comparativa.destroy();
+  charts.comparativa = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["Logro General"],
+      datasets: [
+        { label: DATA_ANTERIOR.meta.prueba, data: [ant.logro_general], backgroundColor: "#94a3b8", borderRadius: 6 },
+        { label: DATA.meta.prueba, data: [cur.logro_general], backgroundColor: "var(--accent)", borderRadius: 6 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: "bottom" }, title: { display: true, text: "Logro General (%)" } },
+      scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + "%" } } }
+    }
+  });
+}
+
+function renderChartComparativaHabilidades(cur, ant, habList) {
+  const ctx = document.getElementById("chartComparativaHab");
+  if (charts.comparativaHab) charts.comparativaHab.destroy();
+  charts.comparativaHab = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: habList.map(h => HAB_NAMES[h]),
+      datasets: [
+        { label: DATA_ANTERIOR.meta.prueba, data: habList.map(h => ant.por_habilidad[h] || 0), backgroundColor: "#94a3b8", borderRadius: 6 },
+        { label: DATA.meta.prueba, data: habList.map(h => cur.por_habilidad[h] || 0), backgroundColor: "var(--accent)", borderRadius: 6 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: "bottom" }, title: { display: true, text: "Logro por Habilidad (%)" } },
+      scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + "%" } } }
+    }
+  });
 }
 
 init().catch(err => {

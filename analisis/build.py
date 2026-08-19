@@ -2,21 +2,23 @@
 # -*- coding: utf-8 -*-
 """
 Procesa los archivos .xlsx de tabulación y la tabla de especificaciones
-de la Prueba Unidad II (2o Medio) y genera data.json con los indicadores
-y distribuciones por nivel para la web de resultados.
+y genera data.json con los indicadores y distribuciones por nivel
+para la web de resultados.
 
-Entradas (en la carpeta padre):
-  - TABLA ESPECIFICACIONES UNIDAD II.xlsx  (pregunta -> habilidad)
-  - 2A TABULACION 4.xlsx                   (curso 2A)
-  - TABULACION 2B 4.xlsx                   (curso 2B)
+Modos:
+  python build.py              Procesa archivos de Prueba Unidad II (raíz)
+  python build.py --cami       Procesa archivos de la carpeta cami/
 
 Salida:
-  - analisis/data.json
+  - analisis/data.json          (datos actuales)
+  - analisis/data_anterior.json (backup previo, si existía data.json)
 """
 
 import json
 import os
 import re
+import shutil
+import sys
 import zipfile
 import xml.etree.ElementTree as ET
 from collections import defaultdict
@@ -73,6 +75,33 @@ def _col_to_index(col):
 
 
 # ---------------------------------------------------------------------------
+# Utilidades para leer .docx (tablas Word)
+# ---------------------------------------------------------------------------
+
+DOCX_NS = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
+
+
+def _read_docx_table(path):
+    """Devuelve lista de filas (cada fila = lista de strings) desde la primera tabla del .docx."""
+    z = zipfile.ZipFile(path)
+    content = z.read("word/document.xml")
+    root = ET.fromstring(content)
+    tables = root.findall(".//w:tbl", DOCX_NS)
+    if not tables:
+        return []
+    rows_out = []
+    for row in tables[0].findall(".//w:tr", DOCX_NS):
+        cells = row.findall(".//w:tc", DOCX_NS)
+        fila = []
+        for cell in cells:
+            texts = cell.findall(".//w:t", DOCX_NS)
+            texto = " ".join(t.text or "" for t in texts).strip()
+            fila.append(texto)
+        rows_out.append(fila)
+    return rows_out
+
+
+# ---------------------------------------------------------------------------
 # Lectura de la tabla de especificaciones
 # ---------------------------------------------------------------------------
 
@@ -97,6 +126,33 @@ def leer_especificaciones(path):
             hab = "REFLEXIONAR"
         preg[n] = hab
     # Ordenar por número
+    preg = {k: preg[k] for k in sorted(preg)}
+    conteo = defaultdict(int)
+    for h in preg.values():
+        conteo[h] += 1
+    return preg, dict(conteo)
+
+
+def leer_especificaciones_docx(path):
+    """Lee especificaciones desde un .docx con tabla: N° Pregunta | Habilidad | Respuesta."""
+    filas = _read_docx_table(path)
+    preg = {}
+    for fila in filas[1:]:  # saltar encabezado
+        if len(fila) < 2:
+            continue
+        a = fila[0].strip()
+        b = fila[1].strip()
+        if not a.isdigit():
+            continue
+        n = int(a)
+        hab = b.upper()
+        if "LOCALIZAR" in hab:
+            hab = "LOCALIZAR"
+        elif "RELACIONAR" in hab or "INTERPRETAR" in hab:
+            hab = "RELACIONAR"
+        elif "REFLEXIONAR" in hab:
+            hab = "REFLEXIONAR"
+        preg[n] = hab
     preg = {k: preg[k] for k in sorted(preg)}
     conteo = defaultdict(int)
     for h in preg.values():
@@ -333,15 +389,36 @@ def calcular_indicadores(estudiantes, especificaciones, preguntas_por_habilidad)
 
 def main():
     base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    out_dir = os.path.join(base, "analisis")
+    os.makedirs(out_dir, exist_ok=True)
+    out_path = os.path.join(out_dir, "data.json")
 
-    esp_path = os.path.join(base, "TABLA ESPECIFICACIONES UNIDAD II.xlsx")
-    a2_path = os.path.join(base, "2A TABULACION 4.xlsx")
-    b2_path = os.path.join(base, "TABULACION 2B 4.xlsx")
+    usar_cami = "--cami" in sys.argv
 
-    print(f"Leyendo especificaciones: {esp_path}")
-    especificaciones, conteo_hab = leer_especificaciones(esp_path)
-    print(f"  Preguntas: {len(especificaciones)}")
-    print(f"  Por habilidad: {conteo_hab}")
+    if usar_cami:
+        # --- Modo CAMI: archivos de la carpeta cami/ ---
+        esp_path = os.path.join(base, "cami", "Tabla de especificaciones y respuestas simce lenguaje octubre 2025 (1) (1).docx")
+        a2_path = os.path.join(base, "cami", "2A INTENSIVA 2.xlsx")
+        b2_path = os.path.join(base, "cami", "2B SEM INTEN 2.xlsx")
+        nombre_prueba = "SIMCE Lenguaje - Octubre 2025"
+        nombres_file = "nombres_cami.json"
+
+        print(f"[Modo CAMI] Leyendo especificaciones (.docx): {esp_path}")
+        especificaciones, conteo_hab = leer_especificaciones_docx(esp_path)
+        print(f"  Preguntas: {len(especificaciones)}")
+        print(f"  Por habilidad: {conteo_hab}")
+    else:
+        # --- Modo original: Prueba Unidad II ---
+        esp_path = os.path.join(base, "TABLA ESPECIFICACIONES UNIDAD II.xlsx")
+        a2_path = os.path.join(base, "2A TABULACION 4.xlsx")
+        b2_path = os.path.join(base, "TABULACION 2B 4.xlsx")
+        nombre_prueba = "Prueba Unidad II - 2o Medio"
+        nombres_file = "nombres.json"
+
+        print(f"Leyendo especificaciones: {esp_path}")
+        especificaciones, conteo_hab = leer_especificaciones(esp_path)
+        print(f"  Preguntas: {len(especificaciones)}")
+        print(f"  Por habilidad: {conteo_hab}")
 
     print(f"\nLeyendo 2A: {a2_path}")
     est_a = leer_tabulacion(a2_path)
@@ -351,9 +428,8 @@ def main():
     est_b = leer_tabulacion(b2_path)
     print(f"  Estudiantes: {len(est_b)}")
 
-    # --- Nombres editables (nombres.json) ---
-    out_dir = os.path.join(base, "analisis")
-    nombres_path = os.path.join(out_dir, "nombres.json")
+    # --- Nombres editables ---
+    nombres_path = os.path.join(out_dir, nombres_file)
     nombres = cargar_nombres(nombres_path)
     if nombres is None:
         print(f"\n[info] No existe {nombres_path}; generando version inicial desde el Excel.")
@@ -387,7 +463,7 @@ def main():
 
     data = {
         "meta": {
-            "prueba": "Prueba Unidad II - 2o Medio",
+            "prueba": nombre_prueba,
             "total_preguntas": len(especificaciones),
             "umbrales": {"verde": umb_verde, "amarillo": umb_amarillo},
         },
@@ -402,9 +478,12 @@ def main():
         "indicadores": indicadores,
     }
 
-    out_dir = os.path.join(base, "analisis")
-    os.makedirs(out_dir, exist_ok=True)
-    out_path = os.path.join(out_dir, "data.json")
+    # Backup: si ya existe data.json, guardar como data_anterior.json
+    if os.path.exists(out_path):
+        anterior_path = os.path.join(out_dir, "data_anterior.json")
+        shutil.copy2(out_path, anterior_path)
+        print(f"\nBackup del data.json anterior guardado en: {anterior_path}")
+
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"\nDatos guardados en: {out_path}")
