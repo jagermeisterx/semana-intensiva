@@ -154,38 +154,38 @@
   },
   "indicadores": {
     "general": {
-      "n_estudiantes": 75,
-      "logro_general": 49.6,
+      "n_estudiantes": 77,
+      "logro_general": 49.8,
       "por_habilidad": {
-        "LOCALIZAR": 56.1,
-        "RELACIONAR": 45.3,
-        "REFLEXIONAR": 73.3
+        "LOCALIZAR": 56.4,
+        "RELACIONAR": 45.5,
+        "REFLEXIONAR": 72.7
       },
       "correctas_por_habilidad": {
-        "RELACIONAR": 714,
-        "LOCALIZAR": 421,
-        "REFLEXIONAR": 55
+        "RELACIONAR": 736,
+        "LOCALIZAR": 434,
+        "REFLEXIONAR": 56
       },
       "niveles_logro": {
-        "Verde": 8,
+        "Verde": 9,
         "Amarillo": 44,
-        "Rojo": 23
+        "Rojo": 24
       },
       "niveles_por_habilidad": {
         "LOCALIZAR": {
-          "Verde": 23,
-          "Amarillo": 40,
+          "Verde": 24,
+          "Amarillo": 41,
           "Rojo": 12
         },
         "RELACIONAR": {
-          "Verde": 7,
+          "Verde": 8,
           "Amarillo": 35,
-          "Rojo": 33
+          "Rojo": 34
         },
         "REFLEXIONAR": {
-          "Verde": 55,
+          "Verde": 56,
           "Amarillo": 0,
-          "Rojo": 20
+          "Rojo": 21
         }
       },
       "detalle_estudiantes": [
@@ -1531,6 +1531,42 @@
           "por_habilidad": {
             "LOCALIZAR": 100.0,
             "RELACIONAR": 76.2,
+            "REFLEXIONAR": 100.0
+          },
+          "nivel_por_habilidad": {
+            "LOCALIZAR": "Verde",
+            "RELACIONAR": "Verde",
+            "REFLEXIONAR": "Verde"
+          }
+        },
+        {
+          "nombre": "CESILIA",
+          "numero": "",
+          "curso": "2B",
+          "correctas": 10,
+          "pct_general": 31.2,
+          "nivel": "Rojo",
+          "por_habilidad": {
+            "LOCALIZAR": 50.0,
+            "RELACIONAR": 23.8,
+            "REFLEXIONAR": 0.0
+          },
+          "nivel_por_habilidad": {
+            "LOCALIZAR": "Amarillo",
+            "RELACIONAR": "Rojo",
+            "REFLEXIONAR": "Rojo"
+          }
+        },
+        {
+          "nombre": "BENJA V",
+          "numero": "",
+          "curso": "2B",
+          "correctas": 26,
+          "pct_general": 81.2,
+          "nivel": "Verde",
+          "por_habilidad": {
+            "LOCALIZAR": 80.0,
+            "RELACIONAR": 81.0,
             "REFLEXIONAR": 100.0
           },
           "nivel_por_habilidad": {
@@ -2264,38 +2300,38 @@
       ]
     },
     "2B": {
-      "n_estudiantes": 37,
-      "logro_general": 48.5,
+      "n_estudiantes": 39,
+      "logro_general": 48.9,
       "por_habilidad": {
-        "LOCALIZAR": 55.7,
-        "RELACIONAR": 44.3,
-        "REFLEXIONAR": 64.9
+        "LOCALIZAR": 56.2,
+        "RELACIONAR": 44.7,
+        "REFLEXIONAR": 64.1
       },
       "correctas_por_habilidad": {
-        "LOCALIZAR": 206,
-        "RELACIONAR": 344,
-        "REFLEXIONAR": 24
+        "LOCALIZAR": 219,
+        "RELACIONAR": 366,
+        "REFLEXIONAR": 25
       },
       "niveles_logro": {
-        "Verde": 4,
+        "Verde": 5,
         "Amarillo": 19,
-        "Rojo": 14
+        "Rojo": 15
       },
       "niveles_por_habilidad": {
         "LOCALIZAR": {
-          "Verde": 12,
-          "Amarillo": 19,
+          "Verde": 13,
+          "Amarillo": 20,
           "Rojo": 6
         },
         "RELACIONAR": {
-          "Verde": 3,
+          "Verde": 4,
           "Amarillo": 17,
-          "Rojo": 17
+          "Rojo": 18
         },
         "REFLEXIONAR": {
-          "Verde": 24,
+          "Verde": 25,
           "Amarillo": 0,
-          "Rojo": 13
+          "Rojo": 14
         }
       },
       "detalle_estudiantes": [
@@ -2957,6 +2993,42 @@
           "por_habilidad": {
             "LOCALIZAR": 100.0,
             "RELACIONAR": 76.2,
+            "REFLEXIONAR": 100.0
+          },
+          "nivel_por_habilidad": {
+            "LOCALIZAR": "Verde",
+            "RELACIONAR": "Verde",
+            "REFLEXIONAR": "Verde"
+          }
+        },
+        {
+          "nombre": "CESILIA",
+          "numero": "",
+          "curso": "2B",
+          "correctas": 10,
+          "pct_general": 31.2,
+          "nivel": "Rojo",
+          "por_habilidad": {
+            "LOCALIZAR": 50.0,
+            "RELACIONAR": 23.8,
+            "REFLEXIONAR": 0.0
+          },
+          "nivel_por_habilidad": {
+            "LOCALIZAR": "Amarillo",
+            "RELACIONAR": "Rojo",
+            "REFLEXIONAR": "Rojo"
+          }
+        },
+        {
+          "nombre": "BENJA V",
+          "numero": "",
+          "curso": "2B",
+          "correctas": 26,
+          "pct_general": 81.2,
+          "nivel": "Verde",
+          "por_habilidad": {
+            "LOCALIZAR": 80.0,
+            "RELACIONAR": 81.0,
             "REFLEXIONAR": 100.0
           },
           "nivel_por_habilidad": {
