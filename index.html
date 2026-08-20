@@ -317,12 +317,12 @@ function nivelPct(pct) {
 function nivelClass(n) { return "nivel-" + n.toLowerCase(); }
 
 async function init() {
-  const res = await fetch("analisis/data.json");
+  const res = await fetch("analisis/data.json", { cache: "no-store" });
   DATA = await res.json();
 
   // Intentar cargar datos anteriores para comparativa
   try {
-    const resAnt = await fetch("analisis/data_anterior.json");
+    const resAnt = await fetch("analisis/data_anterior.json", { cache: "no-store" });
     if (resAnt.ok) DATA_ANTERIOR = await resAnt.json();
   } catch(e) { DATA_ANTERIOR = null; }
 
