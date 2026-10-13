@@ -6,12 +6,16 @@ y genera data.json con los indicadores y distribuciones por nivel
 para la web de resultados.
 
 Modos:
-  python build.py              Procesa archivos de Prueba Unidad II (raíz)
-  python build.py --cami       Procesa archivos de la carpeta cami/
+  python build.py                 Procesa archivos de Prueba Unidad II (raíz)
+  python build.py --cami          Procesa archivos de la carpeta cami/
+  python build.py --actualizacion Procesa la carpeta actualizacion/ (Unidad III,
+                                   cursos 1A/1B/1C y 2A/2B)
 
 Salida:
   - analisis/data.json          (datos actuales)
   - analisis/data_anterior.json (backup previo, si existía data.json)
+  - analisis/data_u3.json       (Unidad III; sólo con --actualizacion)
+  - analisis/nombres_u3.json    (nombres editables Unidad III)
 """
 
 import json
@@ -158,6 +162,55 @@ def leer_especificaciones_docx(path):
     for h in preg.values():
         conteo[h] += 1
     return preg, dict(conteo)
+
+
+def _normalizar_habilidad(texto):
+    """Convierte un texto de habilidad a LOCALIZAR / RELACIONAR / REFLEXIONAR (o None)."""
+    hab = (texto or "").upper()
+    if "LOCALIZAR" in hab:
+        return "LOCALIZAR"
+    if "RELACIONAR" in hab or "INTERPRETAR" in hab:
+        return "RELACIONAR"
+    if "REFLEXIONAR" in hab:
+        return "REFLEXIONAR"
+    return None
+
+
+def leer_especificaciones_docx_generico(path):
+    """
+    Lee una spec desde un .docx con tabla cuyo encabezado puede variar.
+    Detecta la columna de habilidad por contenido y el n° de pregunta como
+    la primera celda numérica de la fila. Funciona con las tablas de la
+    carpeta actualizacion/ (N° | Respuesta | Habilidad | ...).
+    """
+    filas = _read_docx_table(path)
+    preg = {}
+    for fila in filas:
+        n = None
+        hab = None
+        for celda in fila:
+            cs = celda.strip()
+            if n is None and cs.isdigit():
+                n = int(cs)
+            if hab is None:
+                hab = _normalizar_habilidad(cs)
+        if n is None or hab is None:
+            continue
+        preg[n] = hab
+    preg = {k: preg[k] for k in sorted(preg)}
+    conteo = defaultdict(int)
+    for h in preg.values():
+        conteo[h] += 1
+    return preg, dict(conteo)
+
+
+def _buscar_archivo(carpeta, *claves):
+    """Devuelve la ruta del primer archivo de la carpeta que contenga todas las claves."""
+    for nombre in os.listdir(carpeta):
+        bajo = nombre.lower()
+        if all(k.lower() in bajo for k in claves):
+            return os.path.join(carpeta, nombre)
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -384,6 +437,141 @@ def calcular_indicadores(estudiantes, especificaciones, preguntas_por_habilidad)
 
 
 # ---------------------------------------------------------------------------
+# Modo actualizacion/: Unidad III - 1º Medio y 2º Medio
+# ---------------------------------------------------------------------------
+
+# Curso -> archivo Excel dentro de actualizacion/
+ACT_CURSOS = [
+    ("1A", "1A U3.xlsx"),
+    ("1B", "1B U3.xlsx"),
+    ("1C", "U3 1C.xlsx"),
+    ("2A", "U3 2A.xlsx"),
+    ("2B", "U3 2B.xlsx"),
+]
+
+# Grupo (nivel) -> cursos que lo componen
+ACT_GRUPOS = [
+    ("1M", "1º Medio", ["1A", "1B", "1C"]),
+    ("2M", "2º Medio", ["2A", "2B"]),
+]
+
+
+def _guardar_json(path, obj):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(obj, f, ensure_ascii=False, indent=2)
+
+
+def build_actualizacion(base, out_dir):
+    """
+    Procesa la carpeta actualizacion/ (Unidad III):
+
+    - 1A/1B/1C (32 preguntas) usan "TABLA ESPECIFICACIÓN U3 1ºMEDIO.docx".
+    - 2A/2B (44 preguntas) usan "TABLA ESPECIFICACIONES PRUEBS .docx".
+
+    Genera analisis/data_u3.json sin tocar analisis/data.json.
+    """
+    act_dir = os.path.join(base, "actualizacion")
+
+    esp_1m_path = _buscar_archivo(act_dir, "u3", "1º")
+    esp_2m_path = _buscar_archivo(act_dir, "pruebs")
+    if not esp_1m_path or not esp_2m_path:
+        print("[error] No se encontraron los .docx de especificaciones en actualizacion/")
+        return
+
+    print(f"[Modo actualizacion] Spec 1º Medio: {os.path.basename(esp_1m_path)}")
+    esp_1m, conteo_1m = leer_especificaciones_docx_generico(esp_1m_path)
+    print(f"  Preguntas: {len(esp_1m)}  Por habilidad: {conteo_1m}")
+
+    print(f"[Modo actualizacion] Spec 2º Medio: {os.path.basename(esp_2m_path)}")
+    esp_2m, conteo_2m = leer_especificaciones_docx_generico(esp_2m_path)
+    print(f"  Preguntas: {len(esp_2m)}  Por habilidad: {conteo_2m}")
+
+    specs_por_curso = {}
+    for curso, archivo in ACT_CURSOS:
+        specs_por_curso[curso] = (esp_1m, conteo_1m) if curso.startswith("1") else (esp_2m, conteo_2m)
+
+    # --- Leer tabulaciones ---
+    est = {}
+    for curso, archivo in ACT_CURSOS:
+        ruta = os.path.join(act_dir, archivo)
+        estudiantes = leer_tabulacion(ruta)
+        for e in estudiantes:
+            e["curso"] = curso
+        est[curso] = estudiantes
+        print(f"  Leyendo {curso}: {len(estudiantes)} estudiantes ({os.path.basename(ruta)})")
+
+    # --- Nombres editables ---
+    nombres_path = os.path.join(out_dir, "nombres_u3.json")
+    nombres = cargar_nombres(nombres_path)
+    if nombres is None:
+        nombres = {c: {e["numero"]: e["nombre"] for e in est[c]} for c in est}
+        _guardar_json(nombres_path, nombres)
+        print(f"\n[info] Generado {nombres_path} (editable).")
+    else:
+        print(f"\n[info] Usando nombres desde: {nombres_path}")
+
+    for curso in est:
+        aplicar_nombres(est[curso], curso, nombres)
+
+    # --- Construir vistas (grupo por nivel + cada curso) ---
+    prueba_general = "Unidad III - Actualización"
+    vistas = []
+
+    def crear_vista(key, label, grupo, grupo_label, cursos):
+        esp, conteo = specs_por_curso[cursos[0]]
+        alumnos = [e for c in cursos for e in est[c]]
+        ind = calcular_indicadores(alumnos, esp, conteo)
+        return {
+            "key": key,
+            "label": label,
+            "grupo": grupo,
+            "grupo_label": grupo_label,
+            "tipo": "grupo" if len(cursos) > 1 else "curso",
+            "cursos": cursos,
+            "prueba": f"{prueba_general} - {grupo_label}",
+            "total_preguntas": len(esp),
+            "conteo_habilidad": conteo,
+            "especificaciones": [
+                {"pregunta": p, "habilidad": h}
+                for p, h in sorted(esp.items())
+            ],
+            "indicador": ind,
+        }
+
+    for grupo, grupo_label, cursos in ACT_GRUPOS:
+        vistas.append(crear_vista(
+            grupo, f"{grupo_label} ({'+'.join(cursos)})", grupo, grupo_label, cursos
+        ))
+        for c in cursos:
+            vistas.append(crear_vista(c, c, grupo, grupo_label, [c]))
+
+    data = {
+        "meta": {
+            "prueba": prueba_general,
+            "umbrales": {"verde": umb_verde, "amarillo": umb_amarillo},
+        },
+        "vistas": vistas,
+    }
+
+    out_path = os.path.join(out_dir, "data_u3.json")
+    _guardar_json(out_path, data)
+    print(f"\nDatos guardados en: {out_path}")
+
+    # Resumen
+    print("\n" + "=" * 60)
+    print("RESUMEN UNIDAD III")
+    print("=" * 60)
+    for v in vistas:
+        ind = v["indicador"]
+        print(f"\n[{v['label']}] ({v['prueba']})")
+        print(f"  N° Estudiantes: {ind['n_estudiantes']}")
+        print(f"  % Logro General: {ind['logro_general']}%")
+        for hab, pct in ind["por_habilidad"].items():
+            print(f"  % {hab.capitalize()}: {pct}%")
+        print(f"  Niveles (Logro General): {ind['niveles_logro']}")
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -392,6 +580,10 @@ def main():
     out_dir = os.path.join(base, "analisis")
     os.makedirs(out_dir, exist_ok=True)
     out_path = os.path.join(out_dir, "data.json")
+
+    if "--actualizacion" in sys.argv:
+        build_actualizacion(base, out_dir)
+        return
 
     usar_cami = "--cami" in sys.argv
 

@@ -1,0 +1,6313 @@
+{
+  "meta": {
+    "prueba": "Unidad III - Actualización",
+    "umbrales": {
+      "verde": 70.0,
+      "amarillo": 40.0
+    }
+  },
+  "vistas": [
+    {
+      "key": "1M",
+      "label": "1º Medio (1A+1B+1C)",
+      "grupo": "1M",
+      "grupo_label": "1º Medio",
+      "tipo": "grupo",
+      "cursos": [
+        "1A",
+        "1B",
+        "1C"
+      ],
+      "prueba": "Unidad III - Actualización - 1º Medio",
+      "total_preguntas": 32,
+      "conteo_habilidad": {
+        "LOCALIZAR": 19,
+        "RELACIONAR": 11,
+        "REFLEXIONAR": 2
+      },
+      "especificaciones": [
+        {
+          "pregunta": 1,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 2,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 3,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 4,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 5,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 6,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 7,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 8,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 9,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 10,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 11,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 12,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 13,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 14,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 15,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 16,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 17,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 18,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 19,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 20,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 21,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 22,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 23,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 24,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 25,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 26,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 27,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 28,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 29,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 30,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 31,
+          "habilidad": "REFLEXIONAR"
+        },
+        {
+          "pregunta": 32,
+          "habilidad": "REFLEXIONAR"
+        }
+      ],
+      "indicador": {
+        "n_estudiantes": 77,
+        "logro_general": 76.6,
+        "por_habilidad": {
+          "LOCALIZAR": 75.1,
+          "RELACIONAR": 84.5,
+          "REFLEXIONAR": 46.8
+        },
+        "correctas_por_habilidad": {
+          "LOCALIZAR": 1099,
+          "RELACIONAR": 716,
+          "REFLEXIONAR": 72
+        },
+        "niveles_logro": {
+          "Verde": 56,
+          "Amarillo": 14,
+          "Rojo": 7
+        },
+        "niveles_por_habilidad": {
+          "LOCALIZAR": {
+            "Verde": 51,
+            "Amarillo": 20,
+            "Rojo": 6
+          },
+          "RELACIONAR": {
+            "Verde": 65,
+            "Amarillo": 3,
+            "Rojo": 9
+          },
+          "REFLEXIONAR": {
+            "Verde": 27,
+            "Amarillo": 18,
+            "Rojo": 32
+          }
+        },
+        "detalle_estudiantes": [
+          {
+            "nombre": "MAXI BUSTOS",
+            "numero": "1",
+            "curso": "1A",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "FABIO QUIROGA",
+            "numero": "2",
+            "curso": "1A",
+            "correctas": 29,
+            "pct_general": 90.6,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "VICENTE DASSE",
+            "numero": "3",
+            "curso": "1A",
+            "correctas": 28,
+            "pct_general": 87.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JONATHAN GUERQUE",
+            "numero": "4",
+            "curso": "1A",
+            "correctas": 28,
+            "pct_general": 87.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "CAMILA VARGAS",
+            "numero": "5",
+            "curso": "1A",
+            "correctas": 27,
+            "pct_general": 84.4,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "BENJA BELMONTE",
+            "numero": "6",
+            "curso": "1A",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.9,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "FRANCISCO PEREZ",
+            "numero": "7",
+            "curso": "1A",
+            "correctas": 25,
+            "pct_general": 78.1,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 68.4,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "BELEN ORTIZ",
+            "numero": "8",
+            "curso": "1A",
+            "correctas": 25,
+            "pct_general": 78.1,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JOAQUIN GAJARDO",
+            "numero": "9",
+            "curso": "1A",
+            "correctas": 27,
+            "pct_general": 84.4,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "AMBAR ROJAS",
+            "numero": "10",
+            "curso": "1A",
+            "correctas": 21,
+            "pct_general": 65.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 47.4,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "PAMELA MIRANDA",
+            "numero": "11",
+            "curso": "1A",
+            "correctas": 27,
+            "pct_general": 84.4,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 72.7,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JOAQUIN VARGAS",
+            "numero": "12",
+            "curso": "1A",
+            "correctas": 24,
+            "pct_general": 75.0,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "VICENTE MORALES",
+            "numero": "13",
+            "curso": "1A",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "MARION MELIPILLAN",
+            "numero": "14",
+            "curso": "1A",
+            "correctas": 22,
+            "pct_general": 68.8,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "CONSTANZA CUEVAS",
+            "numero": "15",
+            "curso": "1A",
+            "correctas": 24,
+            "pct_general": 75.0,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "GABRIEL MEDINA",
+            "numero": "16",
+            "curso": "1A",
+            "correctas": 22,
+            "pct_general": 68.8,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "SCARLETH LEAL",
+            "numero": "17",
+            "curso": "1A",
+            "correctas": 22,
+            "pct_general": 68.8,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 68.4,
+              "RELACIONAR": 81.8,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "MONSERRAT SANHU",
+            "numero": "18",
+            "curso": "1A",
+            "correctas": 18,
+            "pct_general": 56.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 68.4,
+              "RELACIONAR": 45.5,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "IGNACIA NAHUEL",
+            "numero": "19",
+            "curso": "1A",
+            "correctas": 14,
+            "pct_general": 43.8,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.9,
+              "RELACIONAR": 27.3,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ALEXIS AILLAPÁN",
+            "numero": "20",
+            "curso": "1A",
+            "correctas": 10,
+            "pct_general": 31.2,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 47.4,
+              "RELACIONAR": 9.1,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ALLISON LIZANA",
+            "numero": "21",
+            "curso": "1A",
+            "correctas": 7,
+            "pct_general": 21.9,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 21.1,
+              "RELACIONAR": 27.3,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "BENJA CATALAN",
+            "numero": "22",
+            "curso": "1A",
+            "correctas": 8,
+            "pct_general": 25.0,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 31.6,
+              "RELACIONAR": 18.2,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "YEXABET ALMONACID",
+            "numero": "23",
+            "curso": "1A",
+            "correctas": 5,
+            "pct_general": 15.6,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 15.8,
+              "RELACIONAR": 18.2,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ANTONIETTA",
+            "numero": "1",
+            "curso": "1B",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "KRICHNA REYES",
+            "numero": "2",
+            "curso": "1B",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "ANTONELLA SOTO",
+            "numero": "3",
+            "curso": "1B",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "JUAN BUSTOS",
+            "numero": "4",
+            "curso": "1B",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "MATÍAS BELTRAN",
+            "numero": "5",
+            "curso": "1B",
+            "correctas": 29,
+            "pct_general": 90.6,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "CARLOS ABARCA",
+            "numero": "6",
+            "curso": "1B",
+            "correctas": 29,
+            "pct_general": 90.6,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "CRISTOBAL PEREZ",
+            "numero": "7",
+            "curso": "1B",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 100.0,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "SOFÍA CONTRERAS",
+            "numero": "8",
+            "curso": "1B",
+            "correctas": 29,
+            "pct_general": 90.6,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "ANTONELA MALDO",
+            "numero": "9",
+            "curso": "1B",
+            "correctas": 28,
+            "pct_general": 87.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "DAYANA RODRÍGUEZ",
+            "numero": "10",
+            "curso": "1B",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "JAIME MARTINEZ",
+            "numero": "11",
+            "curso": "1B",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JACOMO HARO",
+            "numero": "12",
+            "curso": "1B",
+            "correctas": 25,
+            "pct_general": 78.1,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "MAXIMILIANO",
+            "numero": "13",
+            "curso": "1B",
+            "correctas": 23,
+            "pct_general": 71.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "DEIVY CHAVEZ",
+            "numero": "14",
+            "curso": "1B",
+            "correctas": 27,
+            "pct_general": 84.4,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JAVIERA RUIZ",
+            "numero": "15",
+            "curso": "1B",
+            "correctas": 24,
+            "pct_general": 75.0,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 68.4,
+              "RELACIONAR": 81.8,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "EMILIA LOPEZ",
+            "numero": "16",
+            "curso": "1B",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.9,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "LEANDRO",
+            "numero": "17",
+            "curso": "1B",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.9,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "CRISTOBAL GARCÍA",
+            "numero": "18",
+            "curso": "1B",
+            "correctas": 23,
+            "pct_general": 71.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 63.6,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "BASTIAN CHICCO",
+            "numero": "19",
+            "curso": "1B",
+            "correctas": 23,
+            "pct_general": 71.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 68.4,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "SCARLETH CABEZAS",
+            "numero": "20",
+            "curso": "1B",
+            "correctas": 21,
+            "pct_general": 65.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 81.8,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "HADE BARTO",
+            "numero": "21",
+            "curso": "1B",
+            "correctas": 20,
+            "pct_general": 62.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.9,
+              "RELACIONAR": 81.8,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "DAYRA ULLOA",
+            "numero": "22",
+            "curso": "1B",
+            "correctas": 18,
+            "pct_general": 56.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 52.6,
+              "RELACIONAR": 72.7,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "EXEQUIEL GONZALEZ",
+            "numero": "23",
+            "curso": "1B",
+            "correctas": 21,
+            "pct_general": 65.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 81.8,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "CAMILA MUÑOZ",
+            "numero": "24",
+            "curso": "1B",
+            "correctas": 20,
+            "pct_general": 62.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 72.7,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ELENA REYES",
+            "numero": "25",
+            "curso": "1B",
+            "correctas": 13,
+            "pct_general": 40.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 47.4,
+              "RELACIONAR": 36.4,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "HENRY PACHECO",
+            "numero": "26",
+            "curso": "1B",
+            "correctas": 11,
+            "pct_general": 34.4,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 36.8,
+              "RELACIONAR": 36.4,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "YORDI URIBE",
+            "numero": "27",
+            "curso": "1B",
+            "correctas": 10,
+            "pct_general": 31.2,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 36.8,
+              "RELACIONAR": 27.3,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "WILLIAMS",
+            "numero": "28",
+            "curso": "1B",
+            "correctas": 8,
+            "pct_general": 25.0,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 36.8,
+              "RELACIONAR": 9.1,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "MARTINA MATUS",
+            "numero": "1",
+            "curso": "1C",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "RAFAELLA VALENCIA",
+            "numero": "2",
+            "curso": "1C",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "CAMILA AGÜERO",
+            "numero": "3",
+            "curso": "1C",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "VALENTINA ANGULO",
+            "numero": "4",
+            "curso": "1C",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "JOSÉ PORTILLO",
+            "numero": "5",
+            "curso": "1C",
+            "correctas": 32,
+            "pct_general": 100.0,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 100.0,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "AMPARO CADAGÁN",
+            "numero": "6",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "MARÍA URRUTIA",
+            "numero": "7",
+            "curso": "1C",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "ESTEBAN BUSTAMAN",
+            "numero": "8",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "DANTE VERGARA",
+            "numero": "9",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "DANIEL YAÑEZ",
+            "numero": "10",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "MICHELLE MANSILLA",
+            "numero": "11",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "ISAAC OSSES",
+            "numero": "12",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "FERNANDA FARIAS",
+            "numero": "13",
+            "curso": "1C",
+            "correctas": 29,
+            "pct_general": 90.6,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "MIGUEL VARGAS",
+            "numero": "14",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "MATIAS OBANDO",
+            "numero": "15",
+            "curso": "1C",
+            "correctas": 29,
+            "pct_general": 90.6,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "ANGEL SEPULVEDA",
+            "numero": "16",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "CARLOS GILBERT",
+            "numero": "17",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "ANDRES QUELINCOY",
+            "numero": "18",
+            "curso": "1C",
+            "correctas": 28,
+            "pct_general": 87.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "ARTURO CACERES",
+            "numero": "19",
+            "curso": "1C",
+            "correctas": 28,
+            "pct_general": 87.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "DANIEL GUTIERREZ",
+            "numero": "20",
+            "curso": "1C",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "ANYELINA DIAZ",
+            "numero": "21",
+            "curso": "1C",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "CLAUDIO SAEZ",
+            "numero": "22",
+            "curso": "1C",
+            "correctas": 25,
+            "pct_general": 78.1,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 68.4,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JULIAN GUTIERREZ",
+            "numero": "23",
+            "curso": "1C",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "TOMAS HERMOSILLA",
+            "numero": "24",
+            "curso": "1C",
+            "correctas": 25,
+            "pct_general": 78.1,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 81.8,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "FELIPE LEAL",
+            "numero": "25",
+            "curso": "1C",
+            "correctas": 17,
+            "pct_general": 53.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 47.4,
+              "RELACIONAR": 72.7,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JAVIER VARELA",
+            "numero": "26",
+            "curso": "1C",
+            "correctas": 17,
+            "pct_general": 53.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 45.5,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "1A",
+      "label": "1A",
+      "grupo": "1M",
+      "grupo_label": "1º Medio",
+      "tipo": "curso",
+      "cursos": [
+        "1A"
+      ],
+      "prueba": "Unidad III - Actualización - 1º Medio",
+      "total_preguntas": 32,
+      "conteo_habilidad": {
+        "LOCALIZAR": 19,
+        "RELACIONAR": 11,
+        "REFLEXIONAR": 2
+      },
+      "especificaciones": [
+        {
+          "pregunta": 1,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 2,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 3,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 4,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 5,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 6,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 7,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 8,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 9,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 10,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 11,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 12,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 13,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 14,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 15,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 16,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 17,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 18,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 19,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 20,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 21,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 22,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 23,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 24,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 25,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 26,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 27,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 28,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 29,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 30,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 31,
+          "habilidad": "REFLEXIONAR"
+        },
+        {
+          "pregunta": 32,
+          "habilidad": "REFLEXIONAR"
+        }
+      ],
+      "indicador": {
+        "n_estudiantes": 23,
+        "logro_general": 67.3,
+        "por_habilidad": {
+          "LOCALIZAR": 67.3,
+          "RELACIONAR": 75.1,
+          "REFLEXIONAR": 23.9
+        },
+        "correctas_por_habilidad": {
+          "LOCALIZAR": 294,
+          "RELACIONAR": 190,
+          "REFLEXIONAR": 11
+        },
+        "niveles_logro": {
+          "Verde": 13,
+          "Amarillo": 6,
+          "Rojo": 4
+        },
+        "niveles_por_habilidad": {
+          "LOCALIZAR": {
+            "Verde": 12,
+            "Amarillo": 8,
+            "Rojo": 3
+          },
+          "RELACIONAR": {
+            "Verde": 17,
+            "Amarillo": 1,
+            "Rojo": 5
+          },
+          "REFLEXIONAR": {
+            "Verde": 2,
+            "Amarillo": 7,
+            "Rojo": 14
+          }
+        },
+        "detalle_estudiantes": [
+          {
+            "nombre": "MAXI BUSTOS",
+            "numero": "1",
+            "curso": "1A",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "FABIO QUIROGA",
+            "numero": "2",
+            "curso": "1A",
+            "correctas": 29,
+            "pct_general": 90.6,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "VICENTE DASSE",
+            "numero": "3",
+            "curso": "1A",
+            "correctas": 28,
+            "pct_general": 87.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JONATHAN GUERQUE",
+            "numero": "4",
+            "curso": "1A",
+            "correctas": 28,
+            "pct_general": 87.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "CAMILA VARGAS",
+            "numero": "5",
+            "curso": "1A",
+            "correctas": 27,
+            "pct_general": 84.4,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "BENJA BELMONTE",
+            "numero": "6",
+            "curso": "1A",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.9,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "FRANCISCO PEREZ",
+            "numero": "7",
+            "curso": "1A",
+            "correctas": 25,
+            "pct_general": 78.1,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 68.4,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "BELEN ORTIZ",
+            "numero": "8",
+            "curso": "1A",
+            "correctas": 25,
+            "pct_general": 78.1,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JOAQUIN GAJARDO",
+            "numero": "9",
+            "curso": "1A",
+            "correctas": 27,
+            "pct_general": 84.4,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "AMBAR ROJAS",
+            "numero": "10",
+            "curso": "1A",
+            "correctas": 21,
+            "pct_general": 65.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 47.4,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "PAMELA MIRANDA",
+            "numero": "11",
+            "curso": "1A",
+            "correctas": 27,
+            "pct_general": 84.4,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 72.7,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JOAQUIN VARGAS",
+            "numero": "12",
+            "curso": "1A",
+            "correctas": 24,
+            "pct_general": 75.0,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "VICENTE MORALES",
+            "numero": "13",
+            "curso": "1A",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "MARION MELIPILLAN",
+            "numero": "14",
+            "curso": "1A",
+            "correctas": 22,
+            "pct_general": 68.8,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "CONSTANZA CUEVAS",
+            "numero": "15",
+            "curso": "1A",
+            "correctas": 24,
+            "pct_general": 75.0,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "GABRIEL MEDINA",
+            "numero": "16",
+            "curso": "1A",
+            "correctas": 22,
+            "pct_general": 68.8,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "SCARLETH LEAL",
+            "numero": "17",
+            "curso": "1A",
+            "correctas": 22,
+            "pct_general": 68.8,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 68.4,
+              "RELACIONAR": 81.8,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "MONSERRAT SANHU",
+            "numero": "18",
+            "curso": "1A",
+            "correctas": 18,
+            "pct_general": 56.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 68.4,
+              "RELACIONAR": 45.5,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "IGNACIA NAHUEL",
+            "numero": "19",
+            "curso": "1A",
+            "correctas": 14,
+            "pct_general": 43.8,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.9,
+              "RELACIONAR": 27.3,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ALEXIS AILLAPÁN",
+            "numero": "20",
+            "curso": "1A",
+            "correctas": 10,
+            "pct_general": 31.2,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 47.4,
+              "RELACIONAR": 9.1,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ALLISON LIZANA",
+            "numero": "21",
+            "curso": "1A",
+            "correctas": 7,
+            "pct_general": 21.9,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 21.1,
+              "RELACIONAR": 27.3,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "BENJA CATALAN",
+            "numero": "22",
+            "curso": "1A",
+            "correctas": 8,
+            "pct_general": 25.0,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 31.6,
+              "RELACIONAR": 18.2,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "YEXABET ALMONACID",
+            "numero": "23",
+            "curso": "1A",
+            "correctas": 5,
+            "pct_general": 15.6,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 15.8,
+              "RELACIONAR": 18.2,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "1B",
+      "label": "1B",
+      "grupo": "1M",
+      "grupo_label": "1º Medio",
+      "tipo": "curso",
+      "cursos": [
+        "1B"
+      ],
+      "prueba": "Unidad III - Actualización - 1º Medio",
+      "total_preguntas": 32,
+      "conteo_habilidad": {
+        "LOCALIZAR": 19,
+        "RELACIONAR": 11,
+        "REFLEXIONAR": 2
+      },
+      "especificaciones": [
+        {
+          "pregunta": 1,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 2,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 3,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 4,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 5,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 6,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 7,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 8,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 9,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 10,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 11,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 12,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 13,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 14,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 15,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 16,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 17,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 18,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 19,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 20,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 21,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 22,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 23,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 24,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 25,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 26,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 27,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 28,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 29,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 30,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 31,
+          "habilidad": "REFLEXIONAR"
+        },
+        {
+          "pregunta": 32,
+          "habilidad": "REFLEXIONAR"
+        }
+      ],
+      "indicador": {
+        "n_estudiantes": 28,
+        "logro_general": 73.5,
+        "por_habilidad": {
+          "LOCALIZAR": 71.8,
+          "RELACIONAR": 82.5,
+          "REFLEXIONAR": 41.1
+        },
+        "correctas_por_habilidad": {
+          "LOCALIZAR": 382,
+          "RELACIONAR": 254,
+          "REFLEXIONAR": 23
+        },
+        "niveles_logro": {
+          "Verde": 19,
+          "Amarillo": 6,
+          "Rojo": 3
+        },
+        "niveles_por_habilidad": {
+          "LOCALIZAR": {
+            "Verde": 16,
+            "Amarillo": 9,
+            "Rojo": 3
+          },
+          "RELACIONAR": {
+            "Verde": 23,
+            "Amarillo": 1,
+            "Rojo": 4
+          },
+          "REFLEXIONAR": {
+            "Verde": 9,
+            "Amarillo": 5,
+            "Rojo": 14
+          }
+        },
+        "detalle_estudiantes": [
+          {
+            "nombre": "ANTONIETTA",
+            "numero": "1",
+            "curso": "1B",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "KRICHNA REYES",
+            "numero": "2",
+            "curso": "1B",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "ANTONELLA SOTO",
+            "numero": "3",
+            "curso": "1B",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "JUAN BUSTOS",
+            "numero": "4",
+            "curso": "1B",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "MATÍAS BELTRAN",
+            "numero": "5",
+            "curso": "1B",
+            "correctas": 29,
+            "pct_general": 90.6,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "CARLOS ABARCA",
+            "numero": "6",
+            "curso": "1B",
+            "correctas": 29,
+            "pct_general": 90.6,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "CRISTOBAL PEREZ",
+            "numero": "7",
+            "curso": "1B",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 100.0,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "SOFÍA CONTRERAS",
+            "numero": "8",
+            "curso": "1B",
+            "correctas": 29,
+            "pct_general": 90.6,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "ANTONELA MALDO",
+            "numero": "9",
+            "curso": "1B",
+            "correctas": 28,
+            "pct_general": 87.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "DAYANA RODRÍGUEZ",
+            "numero": "10",
+            "curso": "1B",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "JAIME MARTINEZ",
+            "numero": "11",
+            "curso": "1B",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JACOMO HARO",
+            "numero": "12",
+            "curso": "1B",
+            "correctas": 25,
+            "pct_general": 78.1,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "MAXIMILIANO",
+            "numero": "13",
+            "curso": "1B",
+            "correctas": 23,
+            "pct_general": 71.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "DEIVY CHAVEZ",
+            "numero": "14",
+            "curso": "1B",
+            "correctas": 27,
+            "pct_general": 84.4,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JAVIERA RUIZ",
+            "numero": "15",
+            "curso": "1B",
+            "correctas": 24,
+            "pct_general": 75.0,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 68.4,
+              "RELACIONAR": 81.8,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "EMILIA LOPEZ",
+            "numero": "16",
+            "curso": "1B",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.9,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "LEANDRO",
+            "numero": "17",
+            "curso": "1B",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.9,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "CRISTOBAL GARCÍA",
+            "numero": "18",
+            "curso": "1B",
+            "correctas": 23,
+            "pct_general": 71.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 63.6,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "BASTIAN CHICCO",
+            "numero": "19",
+            "curso": "1B",
+            "correctas": 23,
+            "pct_general": 71.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 68.4,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "SCARLETH CABEZAS",
+            "numero": "20",
+            "curso": "1B",
+            "correctas": 21,
+            "pct_general": 65.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 81.8,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "HADE BARTO",
+            "numero": "21",
+            "curso": "1B",
+            "correctas": 20,
+            "pct_general": 62.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.9,
+              "RELACIONAR": 81.8,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "DAYRA ULLOA",
+            "numero": "22",
+            "curso": "1B",
+            "correctas": 18,
+            "pct_general": 56.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 52.6,
+              "RELACIONAR": 72.7,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "EXEQUIEL GONZALEZ",
+            "numero": "23",
+            "curso": "1B",
+            "correctas": 21,
+            "pct_general": 65.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 81.8,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "CAMILA MUÑOZ",
+            "numero": "24",
+            "curso": "1B",
+            "correctas": 20,
+            "pct_general": 62.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 72.7,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ELENA REYES",
+            "numero": "25",
+            "curso": "1B",
+            "correctas": 13,
+            "pct_general": 40.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 47.4,
+              "RELACIONAR": 36.4,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "HENRY PACHECO",
+            "numero": "26",
+            "curso": "1B",
+            "correctas": 11,
+            "pct_general": 34.4,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 36.8,
+              "RELACIONAR": 36.4,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "YORDI URIBE",
+            "numero": "27",
+            "curso": "1B",
+            "correctas": 10,
+            "pct_general": 31.2,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 36.8,
+              "RELACIONAR": 27.3,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "WILLIAMS",
+            "numero": "28",
+            "curso": "1B",
+            "correctas": 8,
+            "pct_general": 25.0,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 36.8,
+              "RELACIONAR": 9.1,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "1C",
+      "label": "1C",
+      "grupo": "1M",
+      "grupo_label": "1º Medio",
+      "tipo": "curso",
+      "cursos": [
+        "1C"
+      ],
+      "prueba": "Unidad III - Actualización - 1º Medio",
+      "total_preguntas": 32,
+      "conteo_habilidad": {
+        "LOCALIZAR": 19,
+        "RELACIONAR": 11,
+        "REFLEXIONAR": 2
+      },
+      "especificaciones": [
+        {
+          "pregunta": 1,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 2,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 3,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 4,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 5,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 6,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 7,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 8,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 9,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 10,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 11,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 12,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 13,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 14,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 15,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 16,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 17,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 18,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 19,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 20,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 21,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 22,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 23,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 24,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 25,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 26,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 27,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 28,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 29,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 30,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 31,
+          "habilidad": "REFLEXIONAR"
+        },
+        {
+          "pregunta": 32,
+          "habilidad": "REFLEXIONAR"
+        }
+      ],
+      "indicador": {
+        "n_estudiantes": 26,
+        "logro_general": 88.1,
+        "por_habilidad": {
+          "LOCALIZAR": 85.6,
+          "RELACIONAR": 95.1,
+          "REFLEXIONAR": 73.1
+        },
+        "correctas_por_habilidad": {
+          "LOCALIZAR": 423,
+          "RELACIONAR": 272,
+          "REFLEXIONAR": 38
+        },
+        "niveles_logro": {
+          "Verde": 24,
+          "Amarillo": 2,
+          "Rojo": 0
+        },
+        "niveles_por_habilidad": {
+          "LOCALIZAR": {
+            "Verde": 23,
+            "Amarillo": 3,
+            "Rojo": 0
+          },
+          "RELACIONAR": {
+            "Verde": 25,
+            "Amarillo": 1,
+            "Rojo": 0
+          },
+          "REFLEXIONAR": {
+            "Verde": 16,
+            "Amarillo": 6,
+            "Rojo": 4
+          }
+        },
+        "detalle_estudiantes": [
+          {
+            "nombre": "MARTINA MATUS",
+            "numero": "1",
+            "curso": "1C",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "RAFAELLA VALENCIA",
+            "numero": "2",
+            "curso": "1C",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "CAMILA AGÜERO",
+            "numero": "3",
+            "curso": "1C",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "VALENTINA ANGULO",
+            "numero": "4",
+            "curso": "1C",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "JOSÉ PORTILLO",
+            "numero": "5",
+            "curso": "1C",
+            "correctas": 32,
+            "pct_general": 100.0,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 100.0,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "AMPARO CADAGÁN",
+            "numero": "6",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "MARÍA URRUTIA",
+            "numero": "7",
+            "curso": "1C",
+            "correctas": 31,
+            "pct_general": 96.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "ESTEBAN BUSTAMAN",
+            "numero": "8",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "DANTE VERGARA",
+            "numero": "9",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "DANIEL YAÑEZ",
+            "numero": "10",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "MICHELLE MANSILLA",
+            "numero": "11",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "ISAAC OSSES",
+            "numero": "12",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "FERNANDA FARIAS",
+            "numero": "13",
+            "curso": "1C",
+            "correctas": 29,
+            "pct_general": 90.6,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "MIGUEL VARGAS",
+            "numero": "14",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "MATIAS OBANDO",
+            "numero": "15",
+            "curso": "1C",
+            "correctas": 29,
+            "pct_general": 90.6,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "ANGEL SEPULVEDA",
+            "numero": "16",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 94.7,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "CARLOS GILBERT",
+            "numero": "17",
+            "curso": "1C",
+            "correctas": 30,
+            "pct_general": 93.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "ANDRES QUELINCOY",
+            "numero": "18",
+            "curso": "1C",
+            "correctas": 28,
+            "pct_general": 87.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "ARTURO CACERES",
+            "numero": "19",
+            "curso": "1C",
+            "correctas": 28,
+            "pct_general": 87.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 89.5,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "DANIEL GUTIERREZ",
+            "numero": "20",
+            "curso": "1C",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "ANYELINA DIAZ",
+            "numero": "21",
+            "curso": "1C",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 73.7,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "CLAUDIO SAEZ",
+            "numero": "22",
+            "curso": "1C",
+            "correctas": 25,
+            "pct_general": 78.1,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 68.4,
+              "RELACIONAR": 100.0,
+              "REFLEXIONAR": 50.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JULIAN GUTIERREZ",
+            "numero": "23",
+            "curso": "1C",
+            "correctas": 26,
+            "pct_general": 81.2,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 90.9,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "TOMAS HERMOSILLA",
+            "numero": "24",
+            "curso": "1C",
+            "correctas": 25,
+            "pct_general": 78.1,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 84.2,
+              "RELACIONAR": 81.8,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "FELIPE LEAL",
+            "numero": "25",
+            "curso": "1C",
+            "correctas": 17,
+            "pct_general": 53.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 47.4,
+              "RELACIONAR": 72.7,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JAVIER VARELA",
+            "numero": "26",
+            "curso": "1C",
+            "correctas": 17,
+            "pct_general": 53.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 63.2,
+              "RELACIONAR": 45.5,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "2M",
+      "label": "2º Medio (2A+2B)",
+      "grupo": "2M",
+      "grupo_label": "2º Medio",
+      "tipo": "grupo",
+      "cursos": [
+        "2A",
+        "2B"
+      ],
+      "prueba": "Unidad III - Actualización - 2º Medio",
+      "total_preguntas": 44,
+      "conteo_habilidad": {
+        "LOCALIZAR": 14,
+        "RELACIONAR": 27,
+        "REFLEXIONAR": 3
+      },
+      "especificaciones": [
+        {
+          "pregunta": 1,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 2,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 3,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 4,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 5,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 6,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 7,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 8,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 9,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 10,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 11,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 12,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 13,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 14,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 15,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 16,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 17,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 18,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 19,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 20,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 21,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 22,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 23,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 24,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 25,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 26,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 27,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 28,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 29,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 30,
+          "habilidad": "REFLEXIONAR"
+        },
+        {
+          "pregunta": 31,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 32,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 33,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 34,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 35,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 36,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 37,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 38,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 39,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 40,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 41,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 42,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 43,
+          "habilidad": "REFLEXIONAR"
+        },
+        {
+          "pregunta": 44,
+          "habilidad": "REFLEXIONAR"
+        }
+      ],
+      "indicador": {
+        "n_estudiantes": 58,
+        "logro_general": 56.9,
+        "por_habilidad": {
+          "LOCALIZAR": 61.1,
+          "RELACIONAR": 54.9,
+          "REFLEXIONAR": 55.2
+        },
+        "correctas_por_habilidad": {
+          "LOCALIZAR": 496,
+          "RELACIONAR": 859,
+          "REFLEXIONAR": 96
+        },
+        "niveles_logro": {
+          "Verde": 13,
+          "Amarillo": 38,
+          "Rojo": 7
+        },
+        "niveles_por_habilidad": {
+          "LOCALIZAR": {
+            "Verde": 17,
+            "Amarillo": 36,
+            "Rojo": 5
+          },
+          "RELACIONAR": {
+            "Verde": 14,
+            "Amarillo": 32,
+            "Rojo": 12
+          },
+          "REFLEXIONAR": {
+            "Verde": 13,
+            "Amarillo": 19,
+            "Rojo": 26
+          }
+        },
+        "detalle_estudiantes": [
+          {
+            "nombre": "KARLA ARA",
+            "numero": "1",
+            "curso": "2A",
+            "correctas": 40,
+            "pct_general": 90.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 92.9,
+              "RELACIONAR": 88.9,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "CATA GONZALEZ",
+            "numero": "2",
+            "curso": "2A",
+            "correctas": 37,
+            "pct_general": 84.1,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 85.7,
+              "RELACIONAR": 81.5,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "FCA ROA",
+            "numero": "3",
+            "curso": "2A",
+            "correctas": 35,
+            "pct_general": 79.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 85.7,
+              "RELACIONAR": 74.1,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "BELEN VIDAL",
+            "numero": "4",
+            "curso": "2A",
+            "correctas": 36,
+            "pct_general": 81.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.6,
+              "RELACIONAR": 81.5,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "DANIEL SILVA",
+            "numero": "5",
+            "curso": "2A",
+            "correctas": 33,
+            "pct_general": 75.0,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 71.4,
+              "RELACIONAR": 74.1,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "KRISHNA",
+            "numero": "6",
+            "curso": "2A",
+            "correctas": 32,
+            "pct_general": 72.7,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 85.2,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "CATA GOMEZ",
+            "numero": "7",
+            "curso": "2A",
+            "correctas": 28,
+            "pct_general": 63.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 59.3,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "RACHEL",
+            "numero": "8",
+            "curso": "2A",
+            "correctas": 26,
+            "pct_general": 59.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 71.4,
+              "RELACIONAR": 48.1,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "BLANQUITA",
+            "numero": "9",
+            "curso": "2A",
+            "correctas": 28,
+            "pct_general": 63.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 63.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "SERGIO",
+            "numero": "10",
+            "curso": "2A",
+            "correctas": 30,
+            "pct_general": 68.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 77.8,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "VICENTE O",
+            "numero": "11",
+            "curso": "2A",
+            "correctas": 28,
+            "pct_general": 63.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 66.7,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "BENJA VASQUEZ",
+            "numero": "12",
+            "curso": "2A",
+            "correctas": 26,
+            "pct_general": 59.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 63.0,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ANGELO",
+            "numero": "13",
+            "curso": "2A",
+            "correctas": 26,
+            "pct_general": 59.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 55.6,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JAVIER",
+            "numero": "14",
+            "curso": "2A",
+            "correctas": 29,
+            "pct_general": 65.9,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 70.4,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "AMBAR",
+            "numero": "15",
+            "curso": "2A",
+            "correctas": 22,
+            "pct_general": 50.0,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 42.9,
+              "RELACIONAR": 48.1,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "BARBARA",
+            "numero": "16",
+            "curso": "2A",
+            "correctas": 23,
+            "pct_general": 52.3,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 44.4,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "YERALD",
+            "numero": "17",
+            "curso": "2A",
+            "correctas": 26,
+            "pct_general": 59.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 78.6,
+              "RELACIONAR": 55.6,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "PAMELA M",
+            "numero": "18",
+            "curso": "2A",
+            "correctas": 24,
+            "pct_general": 54.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 42.9,
+              "RELACIONAR": 59.3,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "SEBASTIAN",
+            "numero": "19",
+            "curso": "2A",
+            "correctas": 25,
+            "pct_general": 56.8,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 63.0,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JOSE RIVERA",
+            "numero": "20",
+            "curso": "2A",
+            "correctas": 18,
+            "pct_general": 40.9,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 35.7,
+              "RELACIONAR": 40.7,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "BENJAMIN ARIAS",
+            "numero": "21",
+            "curso": "2A",
+            "correctas": 21,
+            "pct_general": 47.7,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 40.7,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JHENDELIN",
+            "numero": "22",
+            "curso": "2A",
+            "correctas": 22,
+            "pct_general": 50.0,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 44.4,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JORDAN",
+            "numero": "23",
+            "curso": "2A",
+            "correctas": 21,
+            "pct_general": 47.7,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 40.7,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "EVELYN CAICO",
+            "numero": "24",
+            "curso": "2A",
+            "correctas": 19,
+            "pct_general": 43.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 37.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "LIKAN",
+            "numero": "25",
+            "curso": "2A",
+            "correctas": 20,
+            "pct_general": 45.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 42.9,
+              "RELACIONAR": 48.1,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JUAN",
+            "numero": "26",
+            "curso": "2A",
+            "correctas": 19,
+            "pct_general": 43.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 42.9,
+              "RELACIONAR": 48.1,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "YULIANNA",
+            "numero": "27",
+            "curso": "2A",
+            "correctas": 15,
+            "pct_general": 34.1,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 35.7,
+              "RELACIONAR": 33.3,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "NIBALDO",
+            "numero": "28",
+            "curso": "2A",
+            "correctas": 18,
+            "pct_general": 40.9,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 33.3,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "FLAVIO",
+            "numero": "29",
+            "curso": "2A",
+            "correctas": 15,
+            "pct_general": 34.1,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 25.9,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "BENJA VALDI",
+            "numero": "1",
+            "curso": "2B",
+            "correctas": 35,
+            "pct_general": 79.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 92.9,
+              "RELACIONAR": 70.4,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "FCO ORTEGA",
+            "numero": "2",
+            "curso": "2B",
+            "correctas": 36,
+            "pct_general": 81.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.6,
+              "RELACIONAR": 85.2,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JEAN ALARCON",
+            "numero": "3",
+            "curso": "2B",
+            "correctas": 31,
+            "pct_general": 70.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.6,
+              "RELACIONAR": 63.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "CAMILA PAREJA",
+            "numero": "4",
+            "curso": "2B",
+            "correctas": 31,
+            "pct_general": 70.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 85.7,
+              "RELACIONAR": 59.3,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "VALESKA AI",
+            "numero": "5",
+            "curso": "2B",
+            "correctas": 32,
+            "pct_general": 72.7,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 85.7,
+              "RELACIONAR": 66.7,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "CONSTANZA M",
+            "numero": "6",
+            "curso": "2B",
+            "correctas": 36,
+            "pct_general": 81.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.6,
+              "RELACIONAR": 85.2,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "FLORENCIA",
+            "numero": "7",
+            "curso": "2B",
+            "correctas": 30,
+            "pct_general": 68.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 70.4,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "FCO SEPULVEDA",
+            "numero": "8",
+            "curso": "2B",
+            "correctas": 30,
+            "pct_general": 68.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 77.8,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "BENJA REBOLLEDO",
+            "numero": "9",
+            "curso": "2B",
+            "correctas": 30,
+            "pct_general": 68.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 78.6,
+              "RELACIONAR": 66.7,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "DEIVY AVILA",
+            "numero": "10",
+            "curso": "2B",
+            "correctas": 27,
+            "pct_general": 61.4,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 63.0,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "URSULA SOTO",
+            "numero": "11",
+            "curso": "2B",
+            "correctas": 31,
+            "pct_general": 70.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 77.8,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "HECTOR",
+            "numero": "12",
+            "curso": "2B",
+            "correctas": 29,
+            "pct_general": 65.9,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 92.9,
+              "RELACIONAR": 55.6,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "BASTIAN A",
+            "numero": "13",
+            "curso": "2B",
+            "correctas": 23,
+            "pct_general": 52.3,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 48.1,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "KAMILA",
+            "numero": "14",
+            "curso": "2B",
+            "correctas": 21,
+            "pct_general": 47.7,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 44.4,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "PIA OBANDO",
+            "numero": "15",
+            "curso": "2B",
+            "correctas": 21,
+            "pct_general": 47.7,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 40.7,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "AMARILIZ",
+            "numero": "16",
+            "curso": "2B",
+            "correctas": 27,
+            "pct_general": 61.4,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 63.0,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "MAXI UNQUEN",
+            "numero": "17",
+            "curso": "2B",
+            "correctas": 22,
+            "pct_general": 50.0,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 44.4,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JUSTIN",
+            "numero": "18",
+            "curso": "2B",
+            "correctas": 26,
+            "pct_general": 59.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 71.4,
+              "RELACIONAR": 55.6,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ANJEL CARDENAS",
+            "numero": "19",
+            "curso": "2B",
+            "correctas": 19,
+            "pct_general": 43.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 33.3,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JOSEFINA",
+            "numero": "20",
+            "curso": "2B",
+            "correctas": 24,
+            "pct_general": 54.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 51.9,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "RODRIGO BARRA",
+            "numero": "21",
+            "curso": "2B",
+            "correctas": 20,
+            "pct_general": 45.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 42.9,
+              "RELACIONAR": 48.1,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ALEJANDRA",
+            "numero": "22",
+            "curso": "2B",
+            "correctas": 20,
+            "pct_general": 45.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 33.3,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "ALLICE",
+            "numero": "23",
+            "curso": "2B",
+            "correctas": 17,
+            "pct_general": 38.6,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 42.9,
+              "RELACIONAR": 37.0,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ABRAHAM",
+            "numero": "24",
+            "curso": "2B",
+            "correctas": 21,
+            "pct_general": 47.7,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 85.7,
+              "RELACIONAR": 33.3,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "AMALIA",
+            "numero": "25",
+            "curso": "2B",
+            "correctas": 19,
+            "pct_general": 43.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 44.4,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "CESILIA",
+            "numero": "26",
+            "curso": "2B",
+            "correctas": 13,
+            "pct_general": 29.5,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 14.3,
+              "RELACIONAR": 33.3,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "DAVID AZOCAR",
+            "numero": "27",
+            "curso": "2B",
+            "correctas": 17,
+            "pct_general": 38.6,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 37.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "OLIVER",
+            "numero": "28",
+            "curso": "2B",
+            "correctas": 11,
+            "pct_general": 25.0,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 35.7,
+              "RELACIONAR": 22.2,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "MOISES",
+            "numero": "29",
+            "curso": "2B",
+            "correctas": 10,
+            "pct_general": 22.7,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 28.6,
+              "RELACIONAR": 18.5,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "2A",
+      "label": "2A",
+      "grupo": "2M",
+      "grupo_label": "2º Medio",
+      "tipo": "curso",
+      "cursos": [
+        "2A"
+      ],
+      "prueba": "Unidad III - Actualización - 2º Medio",
+      "total_preguntas": 44,
+      "conteo_habilidad": {
+        "LOCALIZAR": 14,
+        "RELACIONAR": 27,
+        "REFLEXIONAR": 3
+      },
+      "especificaciones": [
+        {
+          "pregunta": 1,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 2,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 3,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 4,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 5,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 6,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 7,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 8,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 9,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 10,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 11,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 12,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 13,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 14,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 15,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 16,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 17,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 18,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 19,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 20,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 21,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 22,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 23,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 24,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 25,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 26,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 27,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 28,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 29,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 30,
+          "habilidad": "REFLEXIONAR"
+        },
+        {
+          "pregunta": 31,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 32,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 33,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 34,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 35,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 36,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 37,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 38,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 39,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 40,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 41,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 42,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 43,
+          "habilidad": "REFLEXIONAR"
+        },
+        {
+          "pregunta": 44,
+          "habilidad": "REFLEXIONAR"
+        }
+      ],
+      "indicador": {
+        "n_estudiantes": 29,
+        "logro_general": 58.2,
+        "por_habilidad": {
+          "LOCALIZAR": 59.6,
+          "RELACIONAR": 57.0,
+          "REFLEXIONAR": 62.1
+        },
+        "correctas_por_habilidad": {
+          "LOCALIZAR": 242,
+          "RELACIONAR": 446,
+          "REFLEXIONAR": 54
+        },
+        "niveles_logro": {
+          "Verde": 6,
+          "Amarillo": 21,
+          "Rojo": 2
+        },
+        "niveles_por_habilidad": {
+          "LOCALIZAR": {
+            "Verde": 7,
+            "Amarillo": 20,
+            "Rojo": 2
+          },
+          "RELACIONAR": {
+            "Verde": 8,
+            "Amarillo": 17,
+            "Rojo": 4
+          },
+          "REFLEXIONAR": {
+            "Verde": 10,
+            "Amarillo": 8,
+            "Rojo": 11
+          }
+        },
+        "detalle_estudiantes": [
+          {
+            "nombre": "KARLA ARA",
+            "numero": "1",
+            "curso": "2A",
+            "correctas": 40,
+            "pct_general": 90.9,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 92.9,
+              "RELACIONAR": 88.9,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "CATA GONZALEZ",
+            "numero": "2",
+            "curso": "2A",
+            "correctas": 37,
+            "pct_general": 84.1,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 85.7,
+              "RELACIONAR": 81.5,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "FCA ROA",
+            "numero": "3",
+            "curso": "2A",
+            "correctas": 35,
+            "pct_general": 79.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 85.7,
+              "RELACIONAR": 74.1,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "BELEN VIDAL",
+            "numero": "4",
+            "curso": "2A",
+            "correctas": 36,
+            "pct_general": 81.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.6,
+              "RELACIONAR": 81.5,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "DANIEL SILVA",
+            "numero": "5",
+            "curso": "2A",
+            "correctas": 33,
+            "pct_general": 75.0,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 71.4,
+              "RELACIONAR": 74.1,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "KRISHNA",
+            "numero": "6",
+            "curso": "2A",
+            "correctas": 32,
+            "pct_general": 72.7,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 85.2,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "CATA GOMEZ",
+            "numero": "7",
+            "curso": "2A",
+            "correctas": 28,
+            "pct_general": 63.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 59.3,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "RACHEL",
+            "numero": "8",
+            "curso": "2A",
+            "correctas": 26,
+            "pct_general": 59.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 71.4,
+              "RELACIONAR": 48.1,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "BLANQUITA",
+            "numero": "9",
+            "curso": "2A",
+            "correctas": 28,
+            "pct_general": 63.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 63.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "SERGIO",
+            "numero": "10",
+            "curso": "2A",
+            "correctas": 30,
+            "pct_general": 68.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 77.8,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "VICENTE O",
+            "numero": "11",
+            "curso": "2A",
+            "correctas": 28,
+            "pct_general": 63.6,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 66.7,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "BENJA VASQUEZ",
+            "numero": "12",
+            "curso": "2A",
+            "correctas": 26,
+            "pct_general": 59.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 63.0,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ANGELO",
+            "numero": "13",
+            "curso": "2A",
+            "correctas": 26,
+            "pct_general": 59.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 55.6,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JAVIER",
+            "numero": "14",
+            "curso": "2A",
+            "correctas": 29,
+            "pct_general": 65.9,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 70.4,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "AMBAR",
+            "numero": "15",
+            "curso": "2A",
+            "correctas": 22,
+            "pct_general": 50.0,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 42.9,
+              "RELACIONAR": 48.1,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "BARBARA",
+            "numero": "16",
+            "curso": "2A",
+            "correctas": 23,
+            "pct_general": 52.3,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 44.4,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "YERALD",
+            "numero": "17",
+            "curso": "2A",
+            "correctas": 26,
+            "pct_general": 59.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 78.6,
+              "RELACIONAR": 55.6,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "PAMELA M",
+            "numero": "18",
+            "curso": "2A",
+            "correctas": 24,
+            "pct_general": 54.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 42.9,
+              "RELACIONAR": 59.3,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "SEBASTIAN",
+            "numero": "19",
+            "curso": "2A",
+            "correctas": 25,
+            "pct_general": 56.8,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 63.0,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JOSE RIVERA",
+            "numero": "20",
+            "curso": "2A",
+            "correctas": 18,
+            "pct_general": 40.9,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 35.7,
+              "RELACIONAR": 40.7,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "BENJAMIN ARIAS",
+            "numero": "21",
+            "curso": "2A",
+            "correctas": 21,
+            "pct_general": 47.7,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 40.7,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JHENDELIN",
+            "numero": "22",
+            "curso": "2A",
+            "correctas": 22,
+            "pct_general": 50.0,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 44.4,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JORDAN",
+            "numero": "23",
+            "curso": "2A",
+            "correctas": 21,
+            "pct_general": 47.7,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 40.7,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "EVELYN CAICO",
+            "numero": "24",
+            "curso": "2A",
+            "correctas": 19,
+            "pct_general": 43.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 37.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "LIKAN",
+            "numero": "25",
+            "curso": "2A",
+            "correctas": 20,
+            "pct_general": 45.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 42.9,
+              "RELACIONAR": 48.1,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JUAN",
+            "numero": "26",
+            "curso": "2A",
+            "correctas": 19,
+            "pct_general": 43.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 42.9,
+              "RELACIONAR": 48.1,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "YULIANNA",
+            "numero": "27",
+            "curso": "2A",
+            "correctas": 15,
+            "pct_general": 34.1,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 35.7,
+              "RELACIONAR": 33.3,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "NIBALDO",
+            "numero": "28",
+            "curso": "2A",
+            "correctas": 18,
+            "pct_general": 40.9,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 33.3,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "FLAVIO",
+            "numero": "29",
+            "curso": "2A",
+            "correctas": 15,
+            "pct_general": 34.1,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 25.9,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "2B",
+      "label": "2B",
+      "grupo": "2M",
+      "grupo_label": "2º Medio",
+      "tipo": "curso",
+      "cursos": [
+        "2B"
+      ],
+      "prueba": "Unidad III - Actualización - 2º Medio",
+      "total_preguntas": 44,
+      "conteo_habilidad": {
+        "LOCALIZAR": 14,
+        "RELACIONAR": 27,
+        "REFLEXIONAR": 3
+      },
+      "especificaciones": [
+        {
+          "pregunta": 1,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 2,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 3,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 4,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 5,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 6,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 7,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 8,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 9,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 10,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 11,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 12,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 13,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 14,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 15,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 16,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 17,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 18,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 19,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 20,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 21,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 22,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 23,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 24,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 25,
+          "habilidad": "LOCALIZAR"
+        },
+        {
+          "pregunta": 26,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 27,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 28,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 29,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 30,
+          "habilidad": "REFLEXIONAR"
+        },
+        {
+          "pregunta": 31,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 32,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 33,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 34,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 35,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 36,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 37,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 38,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 39,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 40,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 41,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 42,
+          "habilidad": "RELACIONAR"
+        },
+        {
+          "pregunta": 43,
+          "habilidad": "REFLEXIONAR"
+        },
+        {
+          "pregunta": 44,
+          "habilidad": "REFLEXIONAR"
+        }
+      ],
+      "indicador": {
+        "n_estudiantes": 29,
+        "logro_general": 55.6,
+        "por_habilidad": {
+          "LOCALIZAR": 62.6,
+          "RELACIONAR": 52.7,
+          "REFLEXIONAR": 48.3
+        },
+        "correctas_por_habilidad": {
+          "LOCALIZAR": 254,
+          "RELACIONAR": 413,
+          "REFLEXIONAR": 42
+        },
+        "niveles_logro": {
+          "Verde": 7,
+          "Amarillo": 17,
+          "Rojo": 5
+        },
+        "niveles_por_habilidad": {
+          "LOCALIZAR": {
+            "Verde": 10,
+            "Amarillo": 16,
+            "Rojo": 3
+          },
+          "RELACIONAR": {
+            "Verde": 6,
+            "Amarillo": 15,
+            "Rojo": 8
+          },
+          "REFLEXIONAR": {
+            "Verde": 3,
+            "Amarillo": 11,
+            "Rojo": 15
+          }
+        },
+        "detalle_estudiantes": [
+          {
+            "nombre": "BENJA VALDI",
+            "numero": "1",
+            "curso": "2B",
+            "correctas": 35,
+            "pct_general": 79.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 92.9,
+              "RELACIONAR": 70.4,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "FCO ORTEGA",
+            "numero": "2",
+            "curso": "2B",
+            "correctas": 36,
+            "pct_general": 81.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.6,
+              "RELACIONAR": 85.2,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "JEAN ALARCON",
+            "numero": "3",
+            "curso": "2B",
+            "correctas": 31,
+            "pct_general": 70.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.6,
+              "RELACIONAR": 63.0,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "CAMILA PAREJA",
+            "numero": "4",
+            "curso": "2B",
+            "correctas": 31,
+            "pct_general": 70.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 85.7,
+              "RELACIONAR": 59.3,
+              "REFLEXIONAR": 100.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Verde"
+            }
+          },
+          {
+            "nombre": "VALESKA AI",
+            "numero": "5",
+            "curso": "2B",
+            "correctas": 32,
+            "pct_general": 72.7,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 85.7,
+              "RELACIONAR": 66.7,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "CONSTANZA M",
+            "numero": "6",
+            "curso": "2B",
+            "correctas": 36,
+            "pct_general": 81.8,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 78.6,
+              "RELACIONAR": 85.2,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "FLORENCIA",
+            "numero": "7",
+            "curso": "2B",
+            "correctas": 30,
+            "pct_general": 68.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 70.4,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "FCO SEPULVEDA",
+            "numero": "8",
+            "curso": "2B",
+            "correctas": 30,
+            "pct_general": 68.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 77.8,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "BENJA REBOLLEDO",
+            "numero": "9",
+            "curso": "2B",
+            "correctas": 30,
+            "pct_general": 68.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 78.6,
+              "RELACIONAR": 66.7,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "DEIVY AVILA",
+            "numero": "10",
+            "curso": "2B",
+            "correctas": 27,
+            "pct_general": 61.4,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 63.0,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "URSULA SOTO",
+            "numero": "11",
+            "curso": "2B",
+            "correctas": 31,
+            "pct_general": 70.5,
+            "nivel": "Verde",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 77.8,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Verde",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "HECTOR",
+            "numero": "12",
+            "curso": "2B",
+            "correctas": 29,
+            "pct_general": 65.9,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 92.9,
+              "RELACIONAR": 55.6,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "BASTIAN A",
+            "numero": "13",
+            "curso": "2B",
+            "correctas": 23,
+            "pct_general": 52.3,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 48.1,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "KAMILA",
+            "numero": "14",
+            "curso": "2B",
+            "correctas": 21,
+            "pct_general": 47.7,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 44.4,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "PIA OBANDO",
+            "numero": "15",
+            "curso": "2B",
+            "correctas": 21,
+            "pct_general": 47.7,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 57.1,
+              "RELACIONAR": 40.7,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "AMARILIZ",
+            "numero": "16",
+            "curso": "2B",
+            "correctas": 27,
+            "pct_general": 61.4,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 63.0,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "MAXI UNQUEN",
+            "numero": "17",
+            "curso": "2B",
+            "correctas": 22,
+            "pct_general": 50.0,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 44.4,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JUSTIN",
+            "numero": "18",
+            "curso": "2B",
+            "correctas": 26,
+            "pct_general": 59.1,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 71.4,
+              "RELACIONAR": 55.6,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ANJEL CARDENAS",
+            "numero": "19",
+            "curso": "2B",
+            "correctas": 19,
+            "pct_general": 43.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 33.3,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "JOSEFINA",
+            "numero": "20",
+            "curso": "2B",
+            "correctas": 24,
+            "pct_general": 54.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 51.9,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "RODRIGO BARRA",
+            "numero": "21",
+            "curso": "2B",
+            "correctas": 20,
+            "pct_general": 45.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 42.9,
+              "RELACIONAR": 48.1,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ALEJANDRA",
+            "numero": "22",
+            "curso": "2B",
+            "correctas": 20,
+            "pct_general": 45.5,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 64.3,
+              "RELACIONAR": 33.3,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "ALLICE",
+            "numero": "23",
+            "curso": "2B",
+            "correctas": 17,
+            "pct_general": 38.6,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 42.9,
+              "RELACIONAR": 37.0,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "ABRAHAM",
+            "numero": "24",
+            "curso": "2B",
+            "correctas": 21,
+            "pct_general": 47.7,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 85.7,
+              "RELACIONAR": 33.3,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Verde",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "AMALIA",
+            "numero": "25",
+            "curso": "2B",
+            "correctas": 19,
+            "pct_general": 43.2,
+            "nivel": "Amarillo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 44.4,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Amarillo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "CESILIA",
+            "numero": "26",
+            "curso": "2B",
+            "correctas": 13,
+            "pct_general": 29.5,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 14.3,
+              "RELACIONAR": 33.3,
+              "REFLEXIONAR": 66.7
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Amarillo"
+            }
+          },
+          {
+            "nombre": "DAVID AZOCAR",
+            "numero": "27",
+            "curso": "2B",
+            "correctas": 17,
+            "pct_general": 38.6,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 50.0,
+              "RELACIONAR": 37.0,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Amarillo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "OLIVER",
+            "numero": "28",
+            "curso": "2B",
+            "correctas": 11,
+            "pct_general": 25.0,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 35.7,
+              "RELACIONAR": 22.2,
+              "REFLEXIONAR": 0.0
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          },
+          {
+            "nombre": "MOISES",
+            "numero": "29",
+            "curso": "2B",
+            "correctas": 10,
+            "pct_general": 22.7,
+            "nivel": "Rojo",
+            "por_habilidad": {
+              "LOCALIZAR": 28.6,
+              "RELACIONAR": 18.5,
+              "REFLEXIONAR": 33.3
+            },
+            "nivel_por_habilidad": {
+              "LOCALIZAR": "Rojo",
+              "RELACIONAR": "Rojo",
+              "REFLEXIONAR": "Rojo"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
