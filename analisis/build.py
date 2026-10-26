@@ -8,13 +8,21 @@ para la web de resultados.
 Modos:
   python build.py                 Procesa archivos de Prueba Unidad II (raíz)
   python build.py --cami          Procesa archivos de la carpeta cami/
-  python build.py --actualizacion Procesa la carpeta actualizacion/ (Unidad III,
-                                   cursos 1A/1B/1C y 2A/2B)
+                                  (Semana Intensiva 2)
+  python build.py --sem3          Procesa la carpeta actualizacion/
+                                  (Semana Intensiva 3, 2A/2B) y genera la
+                                  comparativa contra data.json
+  python build.py --actualizacion Procesa la carpeta actualizacion/ (Unidad III
+                                  histórica; requiere los archivos originales)
 
 Salida:
-  - analisis/data.json          (datos actuales)
+  - analisis/data.json          (Semana Intensiva 2 / datos actuales)
   - analisis/data_anterior.json (backup previo, si existía data.json)
+  - analisis/data_sem3.json     (Semana Intensiva 3; sólo con --sem3)
+  - analisis/data_comparativa.json (Intensiva 2 vs 3; sólo con --sem3)
   - analisis/data_u3.json       (Unidad III; sólo con --actualizacion)
+  - analisis/nombres_sem3.json  (nombres editables Semana 3)
+  - analisis/alias_intensivas.json (alias editables Intensiva 2 -> 3)
   - analisis/nombres_u3.json    (nombres editables Unidad III)
 """
 
@@ -23,6 +31,7 @@ import os
 import re
 import shutil
 import sys
+import unicodedata
 import zipfile
 import xml.etree.ElementTree as ET
 from collections import defaultdict
@@ -34,8 +43,11 @@ from collections import defaultdict
 NS = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
 
 
-def _read_xlsx(path):
-    """Devuelve una lista de filas; cada fila es un dict {letra_col: valor}."""
+def _read_xlsx(path, sheet=1):
+    """Devuelve una lista de filas; cada fila es un dict {letra_col: valor}.
+
+    sheet: número de hoja (1 = primera hoja del libro).
+    """
     z = zipfile.ZipFile(path)
     # shared strings
     ss = []
@@ -46,8 +58,8 @@ def _read_xlsx(path):
             ss.append(txt)
     except KeyError:
         pass
-    # hoja 1
-    root = ET.fromstring(z.read("xl/worksheets/sheet1.xml"))
+    # hoja solicitada
+    root = ET.fromstring(z.read(f"xl/worksheets/sheet{sheet}.xml"))
     rows = []
     for row in root.iter(f"{NS}row"):
         cells = {}
@@ -217,14 +229,15 @@ def _buscar_archivo(carpeta, *claves):
 # Lectura de una tabulación
 # ---------------------------------------------------------------------------
 
-def leer_tabulacion(path):
+def leer_tabulacion(path, sheet=1):
     """
     Devuelve lista de estudiantes:
       [{"numero": str, "nombre": str, "respuestas": {1:'C', 2:'I', ...}}]
     Se asume: col A = número de lista, col B = nombre, cols C..AP = preguntas 1..40.
     Valores válidos: 'C' o 'I'. Se ignoran filas vacías y otros valores.
+    sheet: número de hoja del libro (1 = primera).
     """
-    rows = _read_xlsx(path)
+    rows = _read_xlsx(path, sheet=sheet)
     # Mapeo letra columna -> número de pregunta (1..40)
     # C=1, D=2, ..., AP=40
     # Construir el mapeo a partir de la fila de encabezado (row 0).
@@ -572,6 +585,368 @@ def build_actualizacion(base, out_dir):
 
 
 # ---------------------------------------------------------------------------
+# Modo actualizacion/: Semana Intensiva 3 (2º Medio, Forma A)
+# ---------------------------------------------------------------------------
+
+SEM3_PRUEBA = "Semana Intensiva 3 - Forma A"
+
+# Curso -> hoja del libro SEM INT 3 2A.xlsx
+SEM3_CURSOS = [
+    ("2A", 1),
+    ("2B", 2),
+]
+
+SEM3_GRUPOS = [
+    ("2M", "2º Medio", ["2A", "2B"]),
+]
+
+HABILIDADES = ["LOCALIZAR", "RELACIONAR", "REFLEXIONAR"]
+
+# Alias editables para emparejar nombres entre Semana Intensiva 2 y 3.
+# Se usan sólo cuando el nombre normalizado no coincide de forma exacta.
+# "BENJAMIN" (2B) queda fuera a propósito: no se pudo determinar si es
+# BENJA REBOLLEDO o BENJA VALDI.
+ALIAS_INTENSIVAS_DEFAULT = {
+    "2A": {
+        "LIKAN": "LIKAN COMULAI",
+        "CLAUDIO": "CLAUDIO N",
+        "BENJAMIN ARIAS": "BENJA ARIAS",
+        "VICENTE OLAVARRIA": "VICENTE O",
+        "SEBASTIAN JEREZ": "SEBA JEREZ",
+        "JOHN": "JHON MONJE",
+        "JUAN": "JUAN ALVAREZ",
+        "BLANQUITA VILLALON": "BLANQUITA",
+        "YERALD OCARES": "YERALD",
+        "JAVIER CATALAN": "JAVIER",
+        "AMBAR MORENO": "AMBAR",
+        "DANAYS ARENAS": "DANAYS",
+        "SERGIO": "SERGIO ALVAREZ",
+        "PAMELA MARTINEZ": "PAMELA",
+        "RACHEL CABRERA": "RACHEL",
+        "FCA ROA": "FRANCISCA ROA",
+    },
+    "2B": {
+        "DEVORA": "DEBORA",
+        "MONSERRAT SOLIS": "MONSE SOLIS",
+        "MONSERRAT H": "MONSERRAT",
+        "CAMILA": "CAMILA PAREJA",
+        "DEIVY": "DEIVY AVILA",
+        "FRANCISCO ORTEGA": "FCO ORTEGA",
+        "JUSTIN GARNICA": "JUSTIN",
+        "BASTIAN A": "BASTIAN",
+        "OLIVER F": "OLIVER",
+        "ANJEL CARDENAS": "ANJEL",
+    },
+}
+
+
+def _normalizar_nombre(texto):
+    """Mayúsculas, sin tildes, sin puntuación y con espacios simples."""
+    s = unicodedata.normalize("NFKD", texto or "")
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    s = s.upper()
+    s = re.sub(r"[^A-Z0-9 ]", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def _cargar_alias(path):
+    """Carga alias_intensivas.json o crea una versión inicial editable."""
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    _guardar_json(path, ALIAS_INTENSIVAS_DEFAULT)
+    print(f"[info] Generado {path} (editable).")
+    return ALIAS_INTENSIVAS_DEFAULT
+
+
+def _resumen_indicador(ind):
+    return {
+        "n_estudiantes": ind["n_estudiantes"],
+        "logro_general": ind["logro_general"],
+        "por_habilidad": ind["por_habilidad"],
+        "niveles_logro": ind["niveles_logro"],
+    }
+
+
+def _fila_estudiante(detalle, curso):
+    return {
+        "curso": curso,
+        "nombre": detalle["nombre"],
+        "pct_general": detalle["pct_general"],
+        "nivel": detalle["nivel"],
+        "por_habilidad": detalle["por_habilidad"],
+        "nivel_por_habilidad": detalle["nivel_por_habilidad"],
+    }
+
+
+def _delta(actual, anterior):
+    if actual is None or anterior is None:
+        return None
+    return round(actual - anterior, 1)
+
+
+def _fila_comparada(detalle_sem2, detalle_sem3, curso):
+    row = {
+        "curso": curso,
+        "nombre": (detalle_sem3 or detalle_sem2)["nombre"],
+        "sem2": _fila_estudiante(detalle_sem2, curso) if detalle_sem2 else None,
+        "sem3": _fila_estudiante(detalle_sem3, curso) if detalle_sem3 else None,
+        "delta_general": None,
+        "delta_por_habilidad": {},
+    }
+    if detalle_sem2 and detalle_sem3:
+        row["delta_general"] = _delta(
+            detalle_sem3["pct_general"], detalle_sem2["pct_general"]
+        )
+        row["delta_por_habilidad"] = {
+            h: _delta(
+                detalle_sem3["por_habilidad"].get(h, 0),
+                detalle_sem2["por_habilidad"].get(h, 0),
+            )
+            for h in HABILIDADES
+        }
+    return row
+
+
+def _emparejar_curso(curso, ind_sem2, ind_sem3, alias_curso):
+    """
+    Empareja estudiantes por nombre normalizado, aplicando alias editables.
+    Devuelve (filas_comparadas, sin_pareja).
+    """
+    mapa_sem2 = {}
+    for d in ind_sem2["detalle_estudiantes"]:
+        clave = _normalizar_nombre(d["nombre"])
+        if clave in mapa_sem2:
+            print(f"[aviso] Nombre duplicado en Semana 2 - {curso}: {d['nombre']}")
+        mapa_sem2.setdefault(clave, d)
+
+    alias_norm = {
+        _normalizar_nombre(k): v for k, v in (alias_curso or {}).items()
+    }
+
+    usados = set()
+    filas = []
+    for d3 in ind_sem3["detalle_estudiantes"]:
+        clave = _normalizar_nombre(d3["nombre"])
+        objetivo = alias_norm.get(clave)
+        d2 = None
+        if objetivo:
+            d2 = mapa_sem2.get(_normalizar_nombre(objetivo))
+        if d2 is None:
+            d2 = mapa_sem2.get(clave)
+        if d2 is not None and id(d2) in usados:
+            d2 = None
+        if d2 is not None:
+            usados.add(id(d2))
+        filas.append(_fila_comparada(d2, d3, curso))
+
+    for d2 in ind_sem2["detalle_estudiantes"]:
+        if id(d2) not in usados:
+            filas.append(_fila_comparada(d2, None, curso))
+
+    sin_pareja = [
+        {
+            "curso": f["curso"],
+            "nombre": f["nombre"],
+            "semana": "Semana 3" if f["sem2"] is None else "Semana 2",
+            "pct_general": (
+                f["sem3"]["pct_general"] if f["sem3"] else f["sem2"]["pct_general"]
+            ),
+            "motivo": (
+                "Sin coincidencia en Semana 2"
+                if f["sem2"] is None
+                else "Sin datos en Semana 3"
+            ),
+        }
+        for f in filas
+        if f["sem2"] is None or f["sem3"] is None
+    ]
+    return filas, sin_pareja
+
+
+def _crear_comparativa(data_sem2, data_sem3, vistas_sem3, alias):
+    vistas = {}
+    pares = [
+        ("2M", "2º Medio (2A+2B)", "general", "2M"),
+        ("2A", "2A", "2A", "2A"),
+        ("2B", "2B", "2B", "2B"),
+    ]
+    for key, label, key_sem2, key_sem3 in pares:
+        anterior = data_sem2["indicadores"][key_sem2]
+        actual = vistas_sem3[key_sem3]["indicador"]
+        vistas[key] = {
+            "key": key,
+            "label": label,
+            "anterior": _resumen_indicador(anterior),
+            "actual": _resumen_indicador(actual),
+        }
+
+    estudiantes = []
+    sin_pareja = []
+    for curso in ["2A", "2B"]:
+        filas, faltantes = _emparejar_curso(
+            curso,
+            data_sem2["indicadores"][curso],
+            vistas_sem3[curso]["indicador"],
+            alias.get(curso, {}),
+        )
+        estudiantes.extend(filas)
+        sin_pareja.extend(faltantes)
+
+    return {
+        "meta": {
+            "anterior": {
+                "numero": data_sem2["meta"].get("semana", 2),
+                "prueba": data_sem2["meta"]["prueba"],
+                "total_preguntas": data_sem2["meta"]["total_preguntas"],
+                "conteo_habilidad": data_sem2.get("conteo_habilidad", {}),
+            },
+            "actual": {
+                "numero": 3,
+                "prueba": data_sem3["meta"]["prueba"],
+                "total_preguntas": data_sem3["meta"]["total_preguntas"],
+                "conteo_habilidad": data_sem3["conteo_habilidad"],
+            },
+            "umbrales": {"verde": umb_verde, "amarillo": umb_amarillo},
+        },
+        "vistas": vistas,
+        "estudiantes": estudiantes,
+        "sin_pareja": sin_pareja,
+    }
+
+
+def build_sem3(base, out_dir):
+    """
+    Procesa la carpeta actualizacion/ (Semana Intensiva 3, 2º Medio):
+
+    - Lee las hojas 2 A y 2 B de "SEM INT 3 2A.xlsx".
+    - Lee "TABLA PRUEBA SEM 3.docx" (38 preguntas).
+    - Genera analisis/data_sem3.json.
+    - Genera analisis/data_comparativa.json comparando con la Semana
+      Intensiva 2 (analisis/data.json).
+    """
+    act_dir = os.path.join(base, "actualizacion")
+    xlsx_path = _buscar_archivo(act_dir, "sem", "int", "3")
+    docx_path = _buscar_archivo(act_dir, "tabla", "prueba", "sem")
+    if not xlsx_path or not docx_path:
+        print("[error] No se encontraron los archivos de la Semana Intensiva 3 en actualizacion/")
+        return
+
+    print(f"[Modo Semana Intensiva 3] Tabulación: {os.path.basename(xlsx_path)}")
+    print(f"[Modo Semana Intensiva 3] Especificaciones: {os.path.basename(docx_path)}")
+    esp, conteo = leer_especificaciones_docx_generico(docx_path)
+    print(f"  Preguntas: {len(esp)}  Por habilidad: {conteo}")
+
+    est = {}
+    for curso, hoja in SEM3_CURSOS:
+        estudiantes = leer_tabulacion(xlsx_path, sheet=hoja)
+        for e in estudiantes:
+            e["curso"] = curso
+        est[curso] = estudiantes
+        print(f"  Leyendo {curso}: {len(estudiantes)} estudiantes (hoja {hoja})")
+
+    nombres_path = os.path.join(out_dir, "nombres_sem3.json")
+    nombres = cargar_nombres(nombres_path)
+    if nombres is None:
+        nombres = {c: {e["numero"]: e["nombre"] for e in est[c]} for c in est}
+        _guardar_json(nombres_path, nombres)
+        print(f"\n[info] Generado {nombres_path} (editable).")
+    else:
+        print(f"\n[info] Usando nombres desde: {nombres_path}")
+
+    for curso in est:
+        aplicar_nombres(est[curso], curso, nombres)
+
+    vistas = []
+    for grupo, grupo_label, cursos in SEM3_GRUPOS:
+        alumnos = [e for c in cursos for e in est[c]]
+        ind = calcular_indicadores(alumnos, esp, conteo)
+        vistas.append({
+            "key": grupo,
+            "label": f"{grupo_label} ({'+'.join(cursos)})",
+            "grupo": grupo,
+            "grupo_label": grupo_label,
+            "tipo": "grupo",
+            "cursos": cursos,
+            "prueba": f"{SEM3_PRUEBA} - {grupo_label}",
+            "total_preguntas": len(esp),
+            "conteo_habilidad": conteo,
+            "especificaciones": [
+                {"pregunta": p, "habilidad": h}
+                for p, h in sorted(esp.items())
+            ],
+            "indicador": ind,
+        })
+        for c in cursos:
+            alumnos_curso = est[c]
+            ind_curso = calcular_indicadores(alumnos_curso, esp, conteo)
+            vistas.append({
+                "key": c,
+                "label": c,
+                "grupo": grupo,
+                "grupo_label": grupo_label,
+                "tipo": "curso",
+                "cursos": [c],
+                "prueba": f"{SEM3_PRUEBA} - {grupo_label}",
+                "total_preguntas": len(esp),
+                "conteo_habilidad": conteo,
+                "especificaciones": [
+                    {"pregunta": p, "habilidad": h}
+                    for p, h in sorted(esp.items())
+                ],
+                "indicador": ind_curso,
+            })
+
+    data = {
+        "meta": {
+            "prueba": SEM3_PRUEBA,
+            "semana": 3,
+            "total_preguntas": len(esp),
+            "umbrales": {"verde": umb_verde, "amarillo": umb_amarillo},
+        },
+        "conteo_habilidad": conteo,
+        "vistas": vistas,
+    }
+
+    out_path = os.path.join(out_dir, "data_sem3.json")
+    _guardar_json(out_path, data)
+    print(f"\nDatos guardados en: {out_path}")
+
+    # Comparativa con Semana Intensiva 2 (data.json)
+    sem2_path = os.path.join(out_dir, "data.json")
+    if not os.path.exists(sem2_path):
+        print(f"[aviso] No existe {sem2_path}; no se generó la comparativa.")
+    else:
+        with open(sem2_path, "r", encoding="utf-8") as f:
+            data_sem2 = json.load(f)
+        alias_path = os.path.join(out_dir, "alias_intensivas.json")
+        alias = _cargar_alias(alias_path)
+        vistas_por_key = {v["key"]: v for v in vistas}
+        comp = _crear_comparativa(data_sem2, data, vistas_por_key, alias)
+        comp_path = os.path.join(out_dir, "data_comparativa.json")
+        _guardar_json(comp_path, comp)
+        emparejados = sum(1 for e in comp["estudiantes"] if e["sem2"] and e["sem3"])
+        print(f"Comparativa guardada en: {comp_path}")
+        print(
+            f"  Estudiantes emparejados: {emparejados} · "
+            f"sin pareja: {len(comp['sin_pareja'])}"
+        )
+
+    # Resumen
+    print("\n" + "=" * 60)
+    print("RESUMEN SEMANA INTENSIVA 3")
+    print("=" * 60)
+    for v in vistas:
+        ind = v["indicador"]
+        print(f"\n[{v['label']}] ({v['prueba']})")
+        print(f"  N° Estudiantes: {ind['n_estudiantes']}")
+        print(f"  % Logro General: {ind['logro_general']}%")
+        for hab, pct in ind["por_habilidad"].items():
+            print(f"  % {hab.capitalize()}: {pct}%")
+        print(f"  Niveles (Logro General): {ind['niveles_logro']}")
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -585,14 +960,18 @@ def main():
         build_actualizacion(base, out_dir)
         return
 
+    if "--sem3" in sys.argv:
+        build_sem3(base, out_dir)
+        return
+
     usar_cami = "--cami" in sys.argv
 
     if usar_cami:
-        # --- Modo CAMI: archivos de la carpeta cami/ ---
+        # --- Modo CAMI: archivos de la carpeta cami/ (Semana Intensiva 2) ---
         esp_path = os.path.join(base, "cami", "Tabla de especificaciones y respuestas simce lenguaje octubre 2025 (1) (1).docx")
         a2_path = os.path.join(base, "cami", "2A INTENSIVA 2.xlsx")
         b2_path = os.path.join(base, "cami", "2B SEM INTEN 2.xlsx")
-        nombre_prueba = "SIMCE Lenguaje - Octubre 2025"
+        nombre_prueba = "Semana Intensiva 2 - SIMCE Lenguaje Oct 2025"
         nombres_file = "nombres_cami.json"
 
         print(f"[Modo CAMI] Leyendo especificaciones (.docx): {esp_path}")
@@ -663,12 +1042,14 @@ def main():
         "conteo_habilidad": conteo_hab,
         "cursos": ["general", "2A", "2B"],
         "nombres_cursos": {
-            "general": "General (2A + 2B)",
+            "general": "2º Medio (2A + 2B)",
             "2A": "Curso 2A",
             "2B": "Curso 2B",
         },
         "indicadores": indicadores,
     }
+    if usar_cami:
+        data["meta"]["semana"] = 2
 
     # Backup: si ya existe data.json, guardar como data_anterior.json
     if os.path.exists(out_path):

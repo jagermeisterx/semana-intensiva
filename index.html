@@ -259,12 +259,101 @@
 <div class="container">
   <!-- Pestañas -->
   <div class="tabs" id="tabs">
-    <button class="tab-btn active" data-tab="u3">Unidad III · Actualización</button>
-    <button class="tab-btn" data-tab="anterior">Revisión anterior</button>
+    <button class="tab-btn active" data-tab="sem3">Semana Intensiva 3</button>
+    <button class="tab-btn" data-tab="comparativa">Comparativa Intensiva 2 → 3</button>
+    <button class="tab-btn" data-tab="u3">Unidad III · Histórico</button>
+    <button class="tab-btn" data-tab="anterior">Semana Intensiva 2</button>
+  </div>
+
+  <!-- ==================== Pestaña: Semana Intensiva 3 ==================== -->
+  <div class="tab-panel" id="tab-sem3">
+    <nav class="nav-curso" id="sem3-nav"></nav>
+
+    <div class="grid-cards" id="sem3-indicators"></div>
+
+    <div class="section">
+      <h2>Porcentaje de logro por habilidad</h2>
+      <p class="hint">Comparativa del % de respuestas correctas en cada habilidad evaluada.</p>
+      <div class="charts-row">
+        <div class="chart-box"><canvas id="sem3-chartHabilidad"></canvas></div>
+        <div class="chart-box"><canvas id="sem3-chartNivelesLogro"></canvas></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Distribución por nivel (semáforo)</h2>
+      <div class="levels-summary" id="sem3-levels-summary"></div>
+      <div class="chart-box tall"><canvas id="sem3-chartNivelesHabilidad"></canvas></div>
+    </div>
+
+    <div class="section">
+      <h2>Tabla de especificación — Habilidad por pregunta</h2>
+      <div class="levels-summary" id="sem3-hab-count-chips"></div>
+      <details open>
+        <summary>Ver detalle pregunta por pregunta</summary>
+        <div class="table-wrap" id="sem3-tabla-especificacion"></div>
+      </details>
+    </div>
+
+    <div class="section">
+      <h2>Detalle de estudiantes por nivel</h2>
+      <details>
+        <summary>Mostrar tabla de estudiantes</summary>
+        <div class="filter-bar">
+          <label for="sem3-filtro-curso">Filtrar por curso:</label>
+          <select id="sem3-filtro-curso" data-view="sem3"></select>
+          <span class="filter-hint" id="sem3-filtro-hint"></span>
+        </div>
+        <div class="table-wrap" id="sem3-tabla-estudiantes"></div>
+      </details>
+    </div>
+  </div>
+
+  <!-- ==================== Pestaña: Comparativa Intensiva 2 → 3 ==================== -->
+  <div class="tab-panel" id="tab-comparativa" hidden>
+    <nav class="nav-curso" id="cmp-nav"></nav>
+
+    <div class="comp-header" id="cmp-header"></div>
+
+    <div class="section">
+      <h2>Resumen comparativo</h2>
+      <p class="hint" id="cmp-hint"></p>
+      <div class="table-wrap" id="cmp-tabla"></div>
+    </div>
+
+    <div class="section">
+      <h2>Logro general y por habilidad</h2>
+      <div class="charts-row">
+        <div class="chart-box"><canvas id="cmp-chartGeneral"></canvas></div>
+        <div class="chart-box"><canvas id="cmp-chartHabilidad"></canvas></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Comparación por estudiante</h2>
+      <div class="filter-bar">
+        <label for="cmp-filtro-curso">Filtrar por curso:</label>
+        <select id="cmp-filtro-curso" data-view="cmp"></select>
+        <span class="filter-hint" id="cmp-filtro-hint"></span>
+      </div>
+      <details open>
+        <summary>Ver estudiantes emparejados</summary>
+        <div class="table-wrap" id="cmp-tabla-estudiantes"></div>
+      </details>
+      <details>
+        <summary>Estudiantes sin pareja entre semanas</summary>
+        <p class="hint">
+          Los nombres se emparejan de forma automática. Si falta alguien, corrige
+          <code>analisis/alias_intensivas.json</code> y vuelve a ejecutar
+          <code>python3 analisis/build.py --sem3</code>.
+        </p>
+        <div class="table-wrap" id="cmp-tabla-sin-pareja"></div>
+      </details>
+    </div>
   </div>
 
   <!-- ==================== Pestaña: Unidad III (actualizacion/) ==================== -->
-  <div class="tab-panel" id="tab-u3">
+  <div class="tab-panel" id="tab-u3" hidden>
     <nav class="nav-curso" id="u3-nav"></nav>
 
     <div class="grid-cards" id="u3-indicators"></div>
@@ -349,16 +438,6 @@
         <div class="table-wrap" id="tabla-estudiantes"></div>
       </details>
     </div>
-
-    <div class="section" id="seccion-comparativa" style="display:none;">
-      <h2>Comparativa de Pruebas</h2>
-      <div class="comp-header" id="comp-header"></div>
-      <div class="table-wrap" id="tabla-comparativa"></div>
-      <div class="charts-row" style="margin-top:20px;">
-        <div class="chart-box"><canvas id="chartComparativa"></canvas></div>
-        <div class="chart-box"><canvas id="chartComparativaHab"></canvas></div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -368,11 +447,12 @@
 </footer>
 
 <script>
-let SIM = null;        // analisis/data.json  (contenido anterior)
-let SIM_ANT = null;    // analisis/data_anterior.json (comparativa)
-let U3 = null;         // analisis/data_u3.json (Unidad III)
+let SIM = null;        // analisis/data.json  (Semana Intensiva 2)
+let U3 = null;         // analisis/data_u3.json (Unidad III histórica)
+let SEM3 = null;       // analisis/data_sem3.json (Semana Intensiva 3)
+let CMP = null;        // analisis/data_comparativa.json
 const charts = {};
-const state = { tab: "u3", simCurso: "general", u3Key: null };
+const state = { tab: "sem3", simCurso: "general", u3Key: null, sem3Key: null, cmpKey: "2M" };
 
 const HAB_NAMES = {
   LOCALIZAR: "Localizar",
@@ -407,12 +487,8 @@ function habListFrom(conteo) {
 }
 
 async function init() {
-  // --- Datos de la pestaña anterior (SIMCE) ---
+  // --- Semana Intensiva 2 (data.json) ---
   SIM = await (await fetch("analisis/data.json", { cache: "no-store" })).json();
-  try {
-    const r = await fetch("analisis/data_anterior.json", { cache: "no-store" });
-    if (r.ok) SIM_ANT = await r.json();
-  } catch (e) { SIM_ANT = null; }
 
   // --- Pestañas ---
   document.querySelectorAll(".tab-btn").forEach(b => {
@@ -425,6 +501,12 @@ async function init() {
       if (sel.dataset.view === "u3") {
         const v = currentU3Vista();
         renderStudents("u3-", v.indicador, { total_preguntas: v.total_preguntas }, habListFrom(v.conteo_habilidad));
+      } else if (sel.dataset.view === "sem3") {
+        const v = currentSem3Vista();
+        renderStudents("sem3-", v.indicador, { total_preguntas: v.total_preguntas }, habListFrom(v.conteo_habilidad));
+      } else if (sel.dataset.view === "cmp") {
+        renderComparativaEstudiantes();
+        renderCmpSinPareja();
       } else {
         renderStudents("", SIM.indicadores[state.simCurso], SIM.meta, habListFrom(SIM.conteo_habilidad));
       }
@@ -434,7 +516,7 @@ async function init() {
   buildSimNav();
   renderSim();
 
-  // --- Datos de Unidad III ---
+  // --- Unidad III histórica ---
   try {
     U3 = await (await fetch("analisis/data_u3.json", { cache: "no-store" })).json();
     state.u3Key = U3.vistas[0].key;
@@ -442,11 +524,33 @@ async function init() {
     renderU3();
   } catch (e) {
     $("tab-u3").innerHTML =
-      '<div class="empty">No se pudo cargar <code>analisis/data_u3.json</code>.<br>' +
-      'Ejecuta <code>python3 analisis/build.py --actualizacion</code> y recarga la página.</div>';
+      '<div class="empty">No se pudo cargar <code>analisis/data_u3.json</code>.</div>';
   }
 
-  setTab("u3");
+  // --- Semana Intensiva 3 ---
+  try {
+    SEM3 = await (await fetch("analisis/data_sem3.json", { cache: "no-store" })).json();
+    state.sem3Key = SEM3.vistas[0].key;
+    buildSem3Nav();
+    renderSem3();
+  } catch (e) {
+    $("tab-sem3").innerHTML =
+      '<div class="empty">No se pudo cargar <code>analisis/data_sem3.json</code>.<br>' +
+      'Ejecuta <code>python3 analisis/build.py --sem3</code> y recarga la página.</div>';
+  }
+
+  // --- Comparativa Intensiva 2 vs 3 ---
+  try {
+    CMP = await (await fetch("analisis/data_comparativa.json", { cache: "no-store" })).json();
+    buildCmpNav();
+    renderComparativa();
+  } catch (e) {
+    $("tab-comparativa").innerHTML =
+      '<div class="empty">No se pudo cargar <code>analisis/data_comparativa.json</code>.<br>' +
+      'Ejecuta <code>python3 analisis/build.py --sem3</code> y recarga la página.</div>';
+  }
+
+  setTab("sem3");
 }
 
 // ---------------------------------------------------------------------------
@@ -456,6 +560,8 @@ function setTab(tab) {
   state.tab = tab;
   document.querySelectorAll(".tab-btn").forEach(b =>
     b.classList.toggle("active", b.dataset.tab === tab));
+  $("tab-sem3").hidden = tab !== "sem3";
+  $("tab-comparativa").hidden = tab !== "comparativa";
   $("tab-u3").hidden = tab !== "u3";
   $("tab-anterior").hidden = tab !== "anterior";
   updateSubtitle();
@@ -465,7 +571,15 @@ function setTab(tab) {
 }
 
 function updateSubtitle() {
-  if (state.tab === "u3" && U3) {
+  if (state.tab === "sem3" && SEM3) {
+    const v = currentSem3Vista();
+    $("subtitle").textContent = v.prueba + " · " + v.total_preguntas + " preguntas · " + v.label;
+  } else if (state.tab === "comparativa" && CMP) {
+    const v = CMP.vistas[state.cmpKey];
+    $("subtitle").textContent =
+      "Comparativa " + CMP.meta.anterior.prueba + " vs " + CMP.meta.actual.prueba +
+      " · " + v.label;
+  } else if (state.tab === "u3" && U3) {
     const v = currentU3Vista();
     $("subtitle").textContent = v.prueba + " · " + v.total_preguntas + " preguntas · " + v.label;
   } else if (SIM) {
@@ -498,14 +612,13 @@ function renderSim() {
   const ind = SIM.indicadores[state.simCurso];
   const habList = habListFrom(SIM.conteo_habilidad);
   const label = SIM.nombres_cursos[state.simCurso];
-  renderIndicators("", ind, SIM.meta, SIM.conteo_habilidad, habList, "Curso " + label);
+  renderIndicators("", ind, SIM.meta, SIM.conteo_habilidad, habList, label);
   renderLevelsSummary("", ind);
   renderHabChips("", SIM.conteo_habilidad, habList);
   renderEspecTable("", SIM.especificaciones, habList);
   drawAllCharts("", ind, habList);
   populateFilter("", ind, state.simCurso === "general" ? "Todos" : state.simCurso);
   renderStudents("", ind, SIM.meta, habList);
-  if (SIM_ANT) renderComparativa();
 }
 
 // ---------------------------------------------------------------------------
@@ -556,6 +669,56 @@ function renderU3() {
   drawAllCharts("u3-", ind, habList);
   populateFilter("u3-", ind, "Todos");
   renderStudents("u3-", ind, meta, habList);
+}
+
+// ---------------------------------------------------------------------------
+// Pestaña Semana Intensiva 3
+// ---------------------------------------------------------------------------
+function currentSem3Vista() {
+  return SEM3.vistas.find(x => x.key === state.sem3Key) || SEM3.vistas[0];
+}
+
+function buildSem3Nav() {
+  const nav = $("sem3-nav");
+  nav.innerHTML = "";
+  let grupoActual = null;
+  SEM3.vistas.forEach(v => {
+    if (v.grupo !== grupoActual) {
+      grupoActual = v.grupo;
+      const sep = document.createElement("span");
+      sep.className = "nav-group";
+      sep.textContent = v.grupo_label;
+      nav.appendChild(sep);
+    }
+    const b = document.createElement("button");
+    b.textContent = v.label;
+    b.dataset.key = v.key;
+    b.onclick = () => {
+      state.sem3Key = v.key;
+      renderSem3();
+      updateSubtitle();
+    };
+    nav.appendChild(b);
+  });
+}
+
+function renderSem3() {
+  const v = currentSem3Vista();
+  state.sem3Key = v.key;
+  const ind = v.indicador;
+  const meta = { total_preguntas: v.total_preguntas };
+  const habList = habListFrom(v.conteo_habilidad);
+
+  document.querySelectorAll("#sem3-nav button").forEach(b =>
+    b.classList.toggle("active", b.dataset.key === v.key));
+
+  renderIndicators("sem3-", ind, meta, v.conteo_habilidad, habList, v.label);
+  renderLevelsSummary("sem3-", ind);
+  renderHabChips("sem3-", v.conteo_habilidad, habList);
+  renderEspecTable("sem3-", v.especificaciones, habList);
+  drawAllCharts("sem3-", ind, habList);
+  populateFilter("sem3-", ind, "Todos");
+  renderStudents("sem3-", ind, meta, habList);
 }
 
 // ---------------------------------------------------------------------------
@@ -789,105 +952,259 @@ function drawStackedNivelesHabilidad(canvasId, ind, habList) {
 }
 
 // ---------------------------------------------------------------------------
-// Comparativa (pestaña anterior)
+// Comparativa Semana Intensiva 2 vs 3
 // ---------------------------------------------------------------------------
-function diffStr(nuevo, anterior) {
-  const d = nuevo - anterior;
+function deltaSpan(d) {
+  if (d === null || d === undefined) return '<span class="diff-neutral">—</span>';
   if (Math.abs(d) < 0.05) return '<span class="diff-neutral">=</span>';
   const sign = d > 0 ? "+" : "";
   const cls = d > 0 ? "diff-pos" : "diff-neg";
-  return `<span class="${cls}">${sign}${d.toFixed(1)}%</span>`;
+  return `<span class="${cls}">${sign}${d.toFixed(1)}</span>`;
+}
+
+function deltaNeutral(d) {
+  if (d === null || d === undefined) return '<span class="diff-neutral">—</span>';
+  if (d === 0) return '<span class="diff-neutral">=</span>';
+  return `<span class="diff-neutral">${d > 0 ? "+" : ""}${d}</span>`;
+}
+
+function buildCmpNav() {
+  const nav = $("cmp-nav");
+  nav.innerHTML = "";
+  Object.values(CMP.vistas).forEach(v => {
+    const b = document.createElement("button");
+    b.textContent = v.label;
+    b.dataset.key = v.key;
+    b.onclick = () => {
+      state.cmpKey = v.key;
+      renderComparativa();
+      updateSubtitle();
+    };
+    nav.appendChild(b);
+  });
 }
 
 function renderComparativa() {
-  const sec = $("seccion-comparativa");
-  if (!sec || !SIM_ANT) return;
-  sec.style.display = "";
+  const v = CMP.vistas[state.cmpKey] || Object.values(CMP.vistas)[0];
+  state.cmpKey = v.key;
+  const meta = CMP.meta;
+  const antN = meta.anterior.total_preguntas;
+  const actN = meta.actual.total_preguntas;
+  const conteoAnt = meta.anterior.conteo_habilidad || {};
+  const conteoAct = meta.actual.conteo_habilidad || {};
 
-  const cur = SIM.indicadores.general;
-  const ant = SIM_ANT.indicadores.general;
-  const habList = ["LOCALIZAR", "RELACIONAR", "REFLEXIONAR"];
+  document.querySelectorAll("#cmp-nav button").forEach(b =>
+    b.classList.toggle("active", b.dataset.key === v.key));
 
-  $("comp-header").innerHTML = `
-    <span class="comp-badge anterior">Anterior: ${SIM_ANT.meta.prueba}</span>
-    <span class="comp-badge actual">Actual: ${SIM.meta.prueba}</span>
+  $("cmp-header").innerHTML = `
+    <span class="comp-badge anterior">Semana ${meta.anterior.numero}: ${escapeHtml(meta.anterior.prueba)}</span>
+    <span class="comp-badge actual">Semana ${meta.actual.numero}: ${escapeHtml(meta.actual.prueba)}</span>
   `;
 
+  const habCounts = HAB_ORDER
+    .map(h => `${HAB_NAMES[h]} ${conteoAnt[h] || 0}→${conteoAct[h] || 0}`)
+    .join(" · ");
+  $("cmp-hint").innerHTML =
+    `Semana 2: <strong>${antN}</strong> preguntas · Semana 3: <strong>${actN}</strong> preguntas. ` +
+    `Preguntas por habilidad: ${habCounts}. ` +
+    `La composición de estudiantes cambió: <strong>${v.anterior.n_estudiantes} → ${v.actual.n_estudiantes}</strong>. ` +
+    `Los porcentajes son comparables; los conteos de nivel corresponden a cada cohorte. ` +
+    `Reflexionar pasa de 1 a 2 preguntas, así que su variación es especialmente sensible.`;
+
   const rows = [
-    ["N° Estudiantes", cur.n_estudiantes, ant.n_estudiantes, ""],
-    ["% Logro General", cur.logro_general, ant.logro_general, "%"],
-    ...habList.map(h => [
+    ["Preguntas de la prueba", antN, actN, false, false],
+    ["N° estudiantes", v.anterior.n_estudiantes, v.actual.n_estudiantes, false, false],
+    ["% Logro general", v.anterior.logro_general, v.actual.logro_general, true, true],
+    ...HAB_ORDER.map(h => [
       "% " + HAB_NAMES[h],
-      cur.por_habilidad[h] || 0,
-      ant.por_habilidad[h] || 0,
-      "%"
+      v.anterior.por_habilidad[h] || 0,
+      v.actual.por_habilidad[h] || 0,
+      true,
+      true
     ]),
-    ["Verde (≥70%)", cur.niveles_logro.Verde, ant.niveles_logro.Verde, ""],
-    ["Amarillo (40-69%)", cur.niveles_logro.Amarillo, ant.niveles_logro.Amarillo, ""],
-    ["Rojo (<40%)", cur.niveles_logro.Rojo, ant.niveles_logro.Rojo, ""],
+    ["Verde (≥70%)", v.anterior.niveles_logro.Verde, v.actual.niveles_logro.Verde, false, true],
+    ["Amarillo (40–69%)", v.anterior.niveles_logro.Amarillo, v.actual.niveles_logro.Amarillo, false, true],
+    ["Rojo (<40%)", v.anterior.niveles_logro.Rojo, v.actual.niveles_logro.Rojo, false, true],
   ];
 
   let html = `<table class="comp-table"><thead><tr>
     <th>Métrica</th>
-    <th>${SIM_ANT.meta.prueba}</th>
-    <th>${SIM.meta.prueba}</th>
+    <th>Semana ${meta.anterior.numero}</th>
+    <th>Semana ${meta.actual.numero}</th>
     <th>Cambio</th>
   </tr></thead><tbody>`;
-  rows.forEach(([label, nuevo, anterior, suffix]) => {
-    const nv = suffix === "%" ? nuevo.toFixed(1) + "%" : nuevo;
-    const av = suffix === "%" ? anterior.toFixed(1) + "%" : anterior;
-    const diff = suffix === "%" ? diffStr(nuevo, anterior) : "";
+  rows.forEach(([label, anterior, actual, esPct, conDelta]) => {
+    const av = esPct ? anterior.toFixed(1) + "%" : anterior;
+    const nv = esPct ? actual.toFixed(1) + "%" : actual;
+    let diff = "";
+    if (conDelta) {
+      diff = esPct ? deltaSpan(actual - anterior) : deltaNeutral(actual - anterior);
+    }
     html += `<tr><td>${label}</td><td>${av}</td><td>${nv}</td><td>${diff}</td></tr>`;
   });
   html += "</tbody></table>";
-  $("tabla-comparativa").innerHTML = html;
+  $("cmp-tabla").innerHTML = html;
 
-  renderChartComparativaGeneral(cur, ant);
-  renderChartComparativaHabilidades(cur, ant, habList);
+  populateCmpFilter();
+  renderComparativaEstudiantes();
+  renderCmpSinPareja();
+  renderCmpCharts(v);
 }
 
-function renderChartComparativaGeneral(cur, ant) {
-  const canvasId = "chartComparativa";
-  const ctx = $(canvasId);
-  if (!ctx) return;
-  if (charts[canvasId]) charts[canvasId].destroy();
-  charts[canvasId] = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: ["Logro General"],
-      datasets: [
-        { label: SIM_ANT.meta.prueba, data: [ant.logro_general], backgroundColor: "#94a3b8", borderRadius: 6 },
-        { label: SIM.meta.prueba, data: [cur.logro_general], backgroundColor: "#2563eb", borderRadius: 6 }
-      ]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { position: "bottom" }, title: { display: true, text: "Logro General (%)" } },
-      scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + "%" } } }
-    }
-  });
+function populateCmpFilter() {
+  const sel = $("cmp-filtro-curso");
+  if (!sel) return;
+  const cursos = [...new Set(CMP.estudiantes.map(e => e.curso))].sort();
+  if (state.cmpKey === "2M") {
+    let html = '<option value="Todos">Todos</option>';
+    cursos.forEach(c => { html += `<option value="${c}">${c}</option>`; });
+    sel.innerHTML = html;
+    sel.value = "Todos";
+  } else {
+    sel.innerHTML = `<option value="${state.cmpKey}">${state.cmpKey}</option>`;
+    sel.value = state.cmpKey;
+  }
 }
 
-function renderChartComparativaHabilidades(cur, ant, habList) {
-  const canvasId = "chartComparativaHab";
-  const ctx = $(canvasId);
-  if (!ctx) return;
-  if (charts[canvasId]) charts[canvasId].destroy();
-  charts[canvasId] = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: habList.map(h => HAB_NAMES[h]),
-      datasets: [
-        { label: SIM_ANT.meta.prueba, data: habList.map(h => ant.por_habilidad[h] || 0), backgroundColor: "#94a3b8", borderRadius: 6 },
-        { label: SIM.meta.prueba, data: habList.map(h => cur.por_habilidad[h] || 0), backgroundColor: "#2563eb", borderRadius: 6 }
-      ]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { position: "bottom" }, title: { display: true, text: "Logro por Habilidad (%)" } },
-      scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + "%" } } }
-    }
+function renderComparativaEstudiantes() {
+  const wrap = $("cmp-tabla-estudiantes");
+  if (!wrap) return;
+  const sel = $("cmp-filtro-curso");
+  const filtro = sel ? sel.value : "Todos";
+  const emparejadosTotal = CMP.estudiantes.filter(e => e.sem2 && e.sem3).length;
+
+  let rows = CMP.estudiantes.filter(e => e.sem2 && e.sem3);
+  if (state.cmpKey !== "2M") rows = rows.filter(e => e.curso === state.cmpKey);
+  if (filtro !== "Todos") rows = rows.filter(e => e.curso === filtro);
+  rows = rows.slice().sort((a, b) => (b.delta_general ?? -999) - (a.delta_general ?? -999));
+
+  const hint = $("cmp-filtro-hint");
+  if (hint) hint.textContent = `Mostrando ${rows.length} estudiantes emparejados de ${emparejadosTotal}`;
+
+  if (!rows.length) {
+    wrap.innerHTML = '<div class="empty">Sin estudiantes emparejados para este filtro</div>';
+    return;
+  }
+
+  let html = `<table><thead><tr>
+    <th>#</th><th>Curso</th><th>Estudiante</th>
+    <th>% Sem 2</th><th>Nivel Sem 2</th><th>% Sem 3</th><th>Nivel Sem 3</th>
+    <th>Δ General (pp)</th>`;
+  html += HAB_ORDER.map(h => `<th>Δ ${HAB_NAMES[h]} (pp)</th>`).join("");
+  html += "</tr></thead><tbody>";
+
+  rows.forEach((e, i) => {
+    const s2 = e.sem2;
+    const s3 = e.sem3;
+    const cls = "badge-curso c" + e.curso;
+    html += `<tr>
+      <td>${i + 1}</td>
+      <td><span class="${cls}">${e.curso}</span></td>
+      <td>${escapeHtml(e.nombre)}</td>
+      <td class="pct-cell">${s2.pct_general.toFixed(1)}%</td>
+      <td><span class="badge ${nivelClass(s2.nivel)}">${s2.nivel}</span></td>
+      <td class="pct-cell">${s3.pct_general.toFixed(1)}%</td>
+      <td><span class="badge ${nivelClass(s3.nivel)}">${s3.nivel}</span></td>
+      <td>${deltaSpan(e.delta_general)}</td>`;
+    html += HAB_ORDER.map(h => `<td>${deltaSpan(e.delta_por_habilidad[h])}</td>`).join("");
+    html += "</tr>";
   });
+  html += "</tbody></table>";
+  wrap.innerHTML = html;
+}
+
+function renderCmpSinPareja() {
+  const wrap = $("cmp-tabla-sin-pareja");
+  if (!wrap) return;
+  const sel = $("cmp-filtro-curso");
+  const filtro = sel ? sel.value : "Todos";
+
+  let rows = CMP.sin_pareja.slice();
+  if (state.cmpKey !== "2M") rows = rows.filter(r => r.curso === state.cmpKey);
+  if (filtro !== "Todos") rows = rows.filter(r => r.curso === filtro);
+  rows.sort((a, b) => a.curso.localeCompare(b.curso) || a.nombre.localeCompare(b.nombre));
+
+  if (!rows.length) {
+    wrap.innerHTML = '<div class="empty">Todos los estudiantes de este filtro tienen pareja entre semanas</div>';
+    return;
+  }
+
+  let html = `<table><thead><tr>
+    <th>Curso</th><th>Estudiante</th><th>Semana con datos</th>
+    <th>% General</th><th>Motivo</th>
+  </tr></thead><tbody>`;
+  rows.forEach(r => {
+    const cls = "badge-curso c" + r.curso;
+    html += `<tr>
+      <td><span class="${cls}">${r.curso}</span></td>
+      <td>${escapeHtml(r.nombre)}</td>
+      <td>${r.semana}</td>
+      <td class="pct-cell">${r.pct_general.toFixed(1)}%</td>
+      <td>${escapeHtml(r.motivo)}</td>
+    </tr>`;
+  });
+  html += "</tbody></table>";
+  wrap.innerHTML = html;
+}
+
+function renderCmpCharts(v) {
+  const meta = CMP.meta;
+  const labels = [
+    `Semana ${meta.anterior.numero}`,
+    `Semana ${meta.actual.numero}`
+  ];
+
+  const generalId = "cmp-chartGeneral";
+  const generalCtx = $(generalId);
+  if (generalCtx) {
+    if (charts[generalId]) charts[generalId].destroy();
+    charts[generalId] = new Chart(generalCtx, {
+      type: "bar",
+      data: {
+        labels: ["Logro general"],
+        datasets: [
+          { label: labels[0], data: [v.anterior.logro_general], backgroundColor: "#94a3b8", borderRadius: 6 },
+          { label: labels[1], data: [v.actual.logro_general], backgroundColor: "#2563eb", borderRadius: 6 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: "bottom" }, title: { display: true, text: "Logro General (%)" } },
+        scales: { y: { beginAtZero: true, max: 100, ticks: { callback: val => val + "%" } } }
+      }
+    });
+  }
+
+  const habId = "cmp-chartHabilidad";
+  const habCtx = $(habId);
+  if (habCtx) {
+    if (charts[habId]) charts[habId].destroy();
+    charts[habId] = new Chart(habCtx, {
+      type: "bar",
+      data: {
+        labels: HAB_ORDER.map(h => HAB_NAMES[h]),
+        datasets: [
+          {
+            label: labels[0],
+            data: HAB_ORDER.map(h => v.anterior.por_habilidad[h] || 0),
+            backgroundColor: "#94a3b8",
+            borderRadius: 6
+          },
+          {
+            label: labels[1],
+            data: HAB_ORDER.map(h => v.actual.por_habilidad[h] || 0),
+            backgroundColor: "#2563eb",
+            borderRadius: 6
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: "bottom" }, title: { display: true, text: "Logro por Habilidad (%)" } },
+        scales: { y: { beginAtZero: true, max: 100, ticks: { callback: val => val + "%" } } }
+      }
+    });
+  }
 }
 
 init().catch(err => {

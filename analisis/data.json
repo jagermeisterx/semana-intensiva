@@ -1,11 +1,12 @@
 {
   "meta": {
-    "prueba": "SIMCE Lenguaje - Octubre 2025",
+    "prueba": "Semana Intensiva 2 - SIMCE Lenguaje Oct 2025",
     "total_preguntas": 32,
     "umbrales": {
       "verde": 70.0,
       "amarillo": 40.0
-    }
+    },
+    "semana": 2
   },
   "especificaciones": [
     {
@@ -148,7 +149,7 @@
     "2B"
   ],
   "nombres_cursos": {
-    "general": "General (2A + 2B)",
+    "general": "2º Medio (2A + 2B)",
     "2A": "Curso 2A",
     "2B": "Curso 2B"
   },
